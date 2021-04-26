@@ -1,9 +1,9 @@
-const prevButton = document.querySelector("#carousel-button-prev");
-const nextButton = document.querySelector("#carousel-button-next");
-
 let slidePosition = 0;
 const slides = document.getElementsByClassName("carousel-slide");
 const totalSlides = slides.length;
+
+const prevButton = document.querySelector("#carousel-button-prev");
+const nextButton = document.querySelector("#carousel-button-next");
 
 document.getElementById("carousel-button-prev").style.opacity = 0.2;
 

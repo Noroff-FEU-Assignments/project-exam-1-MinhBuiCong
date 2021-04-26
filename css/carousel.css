@@ -40,9 +40,26 @@
   cursor: pointer;
 }
 
+.carousel-slide .carousel-item a {
+  text-decoration: none;
+  cursor: pointer;
+  color: inherit;
+  width: fit-content;
+  height: fit-content;
+}
+
 .carousel-slide .carousel-item:hover {
   box-shadow: 1px 1px 1px 1px rgb(4, 255, 255);
   opacity: 0.8;
+}
+
+.carousel-slide .carousel-item p {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  width: 180px;
 }
 .carousel-slide .carousel-item:hover p {
   color: rgb(4, 255, 255);
