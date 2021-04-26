@@ -1,0 +1,258 @@
+.content-container {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgb(200, 200, 200);
+}
+
+.big-subject-container {
+  height: 500px;
+  width: 100%;
+  background: url("../assets/images/olivier-collet-JMwCe3w7qKk-unsplash.jpg")
+    center no-repeat;
+  background-size: cover;
+}
+
+.content-container .big-subject-container h2 {
+  color: white;
+  position: relative;
+  left: 36%;
+  top: 37%;
+  padding: 5px;
+  background-color: rgba(62, 224, 224, 0.226);
+  cursor: pointer;
+  width: fit-content;
+}
+.content-container .big-subject-container h3 {
+  color: white;
+  position: relative;
+  left: 46%;
+  top: 57%;
+  padding: 5px;
+  background-color: rgb(62, 224, 224);
+  cursor: pointer;
+  width: fit-content;
+  transition: all 0.4s;
+}
+
+.content-container .big-subject-container h3:hover {
+  background-color: teal;
+}
+
+.big-subject-container p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-container .small-subject-container {
+  margin: 100px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.content-container .small-subject-container .subject-title {
+  margin-bottom: 40px;
+  color: teal;
+  font-weight: bold;
+  font-size: 56px;
+}
+
+.small-subject-container a {
+  text-decoration: none;
+  color: inherit;
+}
+.small-subject-container .card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
+  background-color: white;
+  margin-bottom: 40px;
+  width: 100%;
+}
+
+.image-content {
+  height: 250px;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url("../assets/images/ilan-dov-oVqE9mHQBtQ-unsplash.jpg") center
+    no-repeat;
+  background-size: cover;
+  z-index: -1;
+  transition: transform 4s;
+}
+
+.small-subject-container .card:hover .background-image {
+  transform: scale(1.2);
+}
+
+.publication-details {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right bottom,
+    rgba(115, 151, 185, 0.466),
+    rgba(110, 164, 195, 0.52)
+  );
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 10px;
+}
+
+.author {
+  display: inline-block;
+  margin-bottom: 5px;
+  transition: all 0.5s 0.3s;
+}
+
+.author:hover {
+  color: white;
+  opacity: 0.5;
+}
+
+.date {
+  display: block;
+}
+
+.post-content {
+  background-color: white;
+  padding: 20px 30px;
+  position: relative;
+}
+
+.card-title {
+  font-size: 30px;
+  line-height: 1;
+  color: rgb(12, 156, 156);
+}
+
+.card-subtitle {
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: gray;
+  margin: 10px 0px 15px 0px;
+}
+
+.card-description {
+  position: relative;
+  color: rgb(72, 91, 98);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
+
+.card-action {
+  text-align: right;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card-action a {
+  color: teal;
+  position: relative;
+}
+
+.card-action a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
+  background-color: teal;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.card-action a:hover::before {
+  transform: scaleX(1);
+}
+
+@media screen and (max-width: 1024px) {
+  .content-container .big-subject-container h2 {
+    left: 25%;
+  }
+  .content-container .big-subject-container h3 {
+    left: 42%;
+  }
+}
+@media screen and (max-width: 800px) {
+  .content-container .big-subject-container h2 {
+    left: 15%;
+  }
+  .content-container .big-subject-container h3 {
+    left: 38%;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  .small-subject-container .card {
+    flex-direction: row;
+    max-width: 1000px;
+  }
+  .image-content {
+    flex-basis: 40%;
+    height: unset;
+  }
+  .publication-details {
+    transform: translateX(-100%);
+    transition: transform 0.5s;
+  }
+  .card:hover .publication-details {
+    transform: translateX(0);
+  }
+  .author {
+    transform: translateY(-30px);
+    opacity: 0;
+  }
+  .date {
+    transform: translateY(30px);
+    opacity: 0;
+    transition: all 0.5s 0.3s;
+  }
+
+  .card:hover .author,
+  .card:hover .date {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  .post-content {
+    flex-basis: 60%;
+  }
+  .post-content::before {
+    content: "";
+    width: 35px;
+    height: 100%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: -15px;
+    z-index: 10;
+    transform: skewX(-2deg);
+  }
+}
