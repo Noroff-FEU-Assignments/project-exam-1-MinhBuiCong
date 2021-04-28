@@ -17,9 +17,8 @@ async function getUrl() {
 getUrl();
 
 function createCarousel(posts) {
-  const slides = document.querySelector(".carousel-slide");
   let slidePosition = 0;
-  const totalSlides = posts.length;
+  const slides = document.querySelector(".carousel-slide");
   for (var i = 0; i < posts.length; i++) {
     const itemPerSlide = 4;
     var imgUrl = posts[i].featured_media_src_url;
@@ -29,20 +28,25 @@ function createCarousel(posts) {
                     <p>${posts[i].title["rendered"]}</p>
                     </div>
                     `;
+
     if (i === itemPerSlide) {
       return;
     } else {
       slides.innerHTML += itemDiv;
+      var newIndex = i + itemPerSlide;
+
+      document
+        .getElementById("carousel-button-next")
+        .addEventListener("click", function () {
+          moveToNextSlide(newIndex, itemDiv);
+        });
     }
   }
 }
+function moveToNextSlide(newIndex, itemDiv) {}
 
-document
-  .getElementById("carousel-button-next")
-  .addEventListener("click", function () {
-    moveToNextSlide();
-  });
-
-function moveToNextSlide() {
-  console.log("data :>> ");
+function updateSlidePosition(slides) {
+  slides.classList.remove("carousel-visible");
+  slides.classList.add("carousel-hidden");
 }
+// slides[slidePosition].classList.add("carousel-visible");
