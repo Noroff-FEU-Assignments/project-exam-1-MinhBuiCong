@@ -1,6 +1,12 @@
 const url = " https://royals-shop.com/techblog/wp-json/wp/v2/posts?per_page=14";
+const carouselContainer = document.querySelector(".carousel");
+const prevButton = document.querySelector("#carousel-button-prev");
+const nextButton = document.querySelector("#carousel-button-next");
+const pageItem = 4;
 let count = 0;
 let posts;
+
+document.getElementById("carousel-button-prev").style.opacity = 0.2;
 
 async function getUrl() {
   try {
@@ -10,9 +16,11 @@ async function getUrl() {
       },
     });
     const postData = await responsePosts.json();
+    console.log("postData :>> ", postData);
     posts = postData.map(function (post, index) {
       return {
         id: index,
+        link: post.link,
         title: post.title,
         image: post.featured_media_src_url,
         slug: post.slug,
@@ -20,7 +28,7 @@ async function getUrl() {
     });
     createCarousel(posts);
   } catch (error) {
-    console.log("error :>> ", error);
+    carouselContainer.innerHTML = `<h2> Something is not right</h2>`;
   }
 }
 
@@ -28,56 +36,54 @@ getUrl();
 
 function createCarousel(posts) {
   const slides = document.querySelector(".carousel-slide");
-  console.log("slides :>> ", slides);
-  getCarouselItems(count, posts, 4);
+  getCarouselItems(count, posts, pageItem);
   document
     .getElementById("carousel-button-next")
     .addEventListener("click", function () {
       moveToNextSlide(posts);
-      updateSlidePosition();
     });
   document
     .getElementById("carousel-button-prev")
     .addEventListener("click", function () {
-      moveToPrevSlide();
-      updateSlidePosition();
+      moveToPrevSlide(posts);
     });
 }
 
 function getCarouselItems(itemIndex, posts, itemPerSlide) {
-  console.log("itemIndex :>> ", itemIndex);
+  const totalPage = posts.length;
   const slides = document.querySelector(".carousel-slide");
   for (var i = itemIndex; i < posts.length; i++) {
     var imgUrl = posts[i].image;
     var itemDiv = `
-                            <div class="carousel-item" id="${posts[i].id}" >
+                            <a href="${posts.link}">
+    <div class="carousel-item" id="${posts[i].id}" >
                             <img src="${imgUrl}" alt="${posts[i].slug}" />
                             <p>${posts[i].title["rendered"]}</p>
                             </div>
+                            </a>
                             `;
     if (i === itemIndex + itemPerSlide) {
       count += itemPerSlide;
-      //   console.log("count :>> ", count);
       return;
     } else {
       slides.innerHTML += itemDiv;
     }
   }
 }
-// brukes til å fjerne 4 elementene før eller etter
+
 function removeCarouselItems(itemIndex, posts, itemPerSlide) {
-  //TODO: må defineres videre
-  //   var removeItem = document.querySelector(`#${posts.id}`);
-  //   removeItem.parentNode.removeChild(removeItem);
+  const slides = document.querySelector(".carousel-slide");
+  slides.innerHTML = "";
+  getCarouselItems(itemIndex, posts, itemPerSlide);
 }
 
 function moveToNextSlide(posts) {
-  console.log("next button clicked");
-  getCarouselItems(count, posts, 4);
   removeCarouselItems(count, posts, 4);
+  updateCount(count);
 }
-function moveToPrevSlide() {
-  console.log("prev button clicked");
+function moveToPrevSlide(posts) {
+  removeCarouselItems(count, posts, 4);
+  updateCount(count);
 }
 
-function updateSlidePosition() {}
+function updateCount(count) {}
