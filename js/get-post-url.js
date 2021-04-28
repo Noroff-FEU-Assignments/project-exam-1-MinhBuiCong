@@ -1,4 +1,6 @@
 const url = " https://royals-shop.com/techblog/wp-json/wp/v2/posts?per_page=14";
+let count = 0;
+let posts;
 
 async function getUrl() {
   try {
@@ -7,8 +9,16 @@ async function getUrl() {
         "Content-Type": "application/json",
       },
     });
-    const getItems = await responsePosts.json();
-    createCarousel(getItems);
+    const postData = await responsePosts.json();
+    posts = postData.map(function (post, index) {
+      return {
+        id: index,
+        title: post.title,
+        image: post.featured_media_src_url,
+        slug: post.slug,
+      };
+    });
+    createCarousel(posts);
   } catch (error) {
     console.log("error :>> ", error);
   }
@@ -17,36 +27,57 @@ async function getUrl() {
 getUrl();
 
 function createCarousel(posts) {
-  let slidePosition = 0;
   const slides = document.querySelector(".carousel-slide");
-  for (var i = 0; i < posts.length; i++) {
-    const itemPerSlide = 4;
-    var imgUrl = posts[i].featured_media_src_url;
-    var itemDiv = `
-                    <div class="carousel-item">
-                    <img src="${imgUrl}" alt="${posts[i].slug}" />
-                    <p>${posts[i].title["rendered"]}</p>
-                    </div>
-                    `;
+  console.log("slides :>> ", slides);
+  getCarouselItems(count, posts, 4);
+  document
+    .getElementById("carousel-button-next")
+    .addEventListener("click", function () {
+      moveToNextSlide(posts);
+      updateSlidePosition();
+    });
+  document
+    .getElementById("carousel-button-prev")
+    .addEventListener("click", function () {
+      moveToPrevSlide();
+      updateSlidePosition();
+    });
+}
 
-    if (i === itemPerSlide) {
+function getCarouselItems(itemIndex, posts, itemPerSlide) {
+  console.log("itemIndex :>> ", itemIndex);
+  const slides = document.querySelector(".carousel-slide");
+  for (var i = itemIndex; i < posts.length; i++) {
+    var imgUrl = posts[i].image;
+    var itemDiv = `
+                            <div class="carousel-item" id="${posts[i].id}" >
+                            <img src="${imgUrl}" alt="${posts[i].slug}" />
+                            <p>${posts[i].title["rendered"]}</p>
+                            </div>
+                            `;
+    if (i === itemIndex + itemPerSlide) {
+      count += itemPerSlide;
+      //   console.log("count :>> ", count);
       return;
     } else {
       slides.innerHTML += itemDiv;
-      var newIndex = i + itemPerSlide;
-
-      document
-        .getElementById("carousel-button-next")
-        .addEventListener("click", function () {
-          moveToNextSlide(newIndex, itemDiv);
-        });
     }
   }
 }
-function moveToNextSlide(newIndex, itemDiv) {}
-
-function updateSlidePosition(slides) {
-  slides.classList.remove("carousel-visible");
-  slides.classList.add("carousel-hidden");
+// brukes til å fjerne 4 elementene før eller etter
+function removeCarouselItems(itemIndex, posts, itemPerSlide) {
+  //TODO: må defineres videre
+  //   var removeItem = document.querySelector(`#${posts.id}`);
+  //   removeItem.parentNode.removeChild(removeItem);
 }
-// slides[slidePosition].classList.add("carousel-visible");
+
+function moveToNextSlide(posts) {
+  console.log("next button clicked");
+  getCarouselItems(count, posts, 4);
+  removeCarouselItems(count, posts, 4);
+}
+function moveToPrevSlide() {
+  console.log("prev button clicked");
+}
+
+function updateSlidePosition() {}
