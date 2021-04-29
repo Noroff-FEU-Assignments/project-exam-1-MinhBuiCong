@@ -7,7 +7,7 @@ let posts;
 
 document.getElementById("carousel-button-prev").style.opacity = 0.2;
 
-export async function getUrl() {
+async function getUrl() {
   try {
     const responsePosts = await fetch(url, {
       headers: {
@@ -50,7 +50,9 @@ function createCarousel(posts) {
   var slideItems = document.querySelectorAll(".carousel-item");
   var totalItem = slideItems.length;
 
-  slideItems[0].classList.add("carousel-visible");
+  for (var i = 0; i < 4; i++) {
+    slideItems[i].classList.add("carousel-visible");
+  }
 
   document
     .getElementById("carousel-button-next")
@@ -66,37 +68,38 @@ function createCarousel(posts) {
 }
 
 function moveToNextSlide(totalItem, slideItems) {
-  if (slidePosition === totalItem - 1) {
-    slidePosition = totalItem - 1;
-  } else {
-    slidePosition++;
-    console.log("slidePosition teller :>> ", slidePosition);
-    prevButton.style.opacity = 1;
-    updateSlidePosition(slideItems);
+  slidePosition += 4;
+  if (slidePosition + 4 >= totalItem - 1) {
+    document.getElementById("carousel-button-next").disabled = true;
+    nextButton.style.opacity = 0.2;
   }
+  prevButton.style.opacity = 1;
+  updateSlidePosition(slideItems, totalItem);
 }
 
 function moveToPrevSlide(totalItem, slideItems) {
   if (slidePosition === 0) {
+    prevButton.style.opacity = 0.2;
     return;
   } else {
-    slidePosition--;
+    slidePosition -= 4;
+    document.getElementById("carousel-button-next").disabled = false;
+    nextButton.style.opacity = 1;
     updateButton();
   }
-  updateSlidePosition(slideItems);
+  updateSlidePosition(slideItems, totalItem);
 }
-
-function updateNextButton() {}
 
 function updateButton() {
-  prevButton.style.opacity = 0.2;
-  nextButton.style.opacity = 0.2;
+  if (slidePosition === 0) prevButton.style.opacity = 0.2;
 }
 
-function updateSlidePosition(slideItems) {
+function updateSlidePosition(slideItems, totalItem) {
   for (let slideItem of slideItems) {
     slideItem.classList.remove("carousel-visible");
     slideItem.classList.add("carousel-hidden");
   }
-  slideItems[slidePosition].classList.add("carousel-visible");
+  for (var i = slidePosition; i < slidePosition + 4 && i < totalItem; i++) {
+    slideItems[i].classList.add("carousel-visible");
+  }
 }
