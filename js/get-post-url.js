@@ -2,13 +2,12 @@ const url = " https://royals-shop.com/techblog/wp-json/wp/v2/posts?per_page=14";
 const carouselContainer = document.querySelector(".carousel");
 const prevButton = document.querySelector("#carousel-button-prev");
 const nextButton = document.querySelector("#carousel-button-next");
-const pageItem = 4;
-let count = 0;
+let slidePosition = 0;
 let posts;
 
 document.getElementById("carousel-button-prev").style.opacity = 0.2;
 
-async function getUrl() {
+export async function getUrl() {
   try {
     const responsePosts = await fetch(url, {
       headers: {
@@ -28,6 +27,7 @@ async function getUrl() {
     createCarousel(posts);
   } catch (error) {
     carouselContainer.innerHTML = `<h2> Something is not right</h2>`;
+    console.log("error :>> ", error);
   }
 }
 
@@ -35,109 +35,68 @@ getUrl();
 
 function createCarousel(posts) {
   const slides = document.querySelector(".carousel-slide");
-  getCarouselItems(count, posts, pageItem);
+  for (var i = 0; i < posts.length; i++) {
+    var imgUrl = posts[i].image;
+    var itemDiv = `
+      <a href="${posts.link}">
+      <div class="carousel-item" id="${posts[i].id}" >
+      <img src="${imgUrl}" alt="${posts[i].slug}" />
+      <p>${posts[i].title["rendered"]}</p>
+      </div>
+      </a>
+      `;
+    slides.innerHTML += itemDiv;
+  }
+  var slideItems = document.querySelectorAll(".carousel-item");
+  var totalItem = slideItems.length;
+
+  slideItems[0].classList.add("carousel-visible");
 
   document
     .getElementById("carousel-button-next")
     .addEventListener("click", function () {
-      if (count === pageItem) {
-        moveToNextSlide(count, posts);
-      } else if (count > pageItem) {
-        moveToNextSlide(count, posts);
-      }
+      moveToNextSlide(totalItem, slideItems);
     });
+
   document
     .getElementById("carousel-button-prev")
     .addEventListener("click", function () {
-      if (count === pageItem) {
-        return;
-      } else {
-        moveToPrevSlide(count, posts);
-      }
+      moveToPrevSlide(totalItem, slideItems);
     });
 }
 
-//Next slide function
-
-function moveToNextSlide(count, posts) {
-  //   console.log("count :>> ", count);
-  if (count === 12) {
-    nextButton.style.opacity = 0.2;
+function moveToNextSlide(totalItem, slideItems) {
+  if (slidePosition === totalItem - 1) {
+    slidePosition = totalItem - 1;
   } else {
+    slidePosition++;
+    console.log("slidePosition teller :>> ", slidePosition);
     prevButton.style.opacity = 1;
-    nextButton.style.opacity = 1;
-  }
-  removeCarouselItems(count, posts, pageItem);
-}
-
-//Remove content, when clicking on Next Slide
-
-function removeCarouselItems(itemIndex, posts, itemPerSlide) {
-  const slides = document.querySelector(".carousel-slide");
-  slides.innerHTML = "";
-  getCarouselItems(itemIndex, posts, itemPerSlide);
-}
-
-//Load up content on init, refresh content when next slide click
-
-function getCarouselItems(itemIndex, posts, itemPerSlide) {
-  const slides = document.querySelector(".carousel-slide");
-  for (var i = itemIndex; i < posts.length; i++) {
-    var imgUrl = posts[i].image;
-    var itemDiv = `
-                            <a href="${posts.link}">
-    <div class="carousel-item" id="${posts[i].id}" >
-                            <img src="${imgUrl}" alt="${posts[i].slug}" />
-                            <p>${posts[i].title["rendered"]}</p>
-                            </div>
-                            </a>
-                            `;
-    if (i === itemIndex + itemPerSlide) {
-      count += itemPerSlide;
-      return;
-    } else {
-      slides.innerHTML += itemDiv;
-    }
+    updateSlidePosition(slideItems);
   }
 }
 
-//Prev function
-
-function moveToPrevSlide(count, posts) {
-  var newCount = count - pageItem;
-  removePrevCarouselItems(newCount, posts, pageItem);
-}
-
-//Remove content, when clicking on prev slide
-
-function removePrevCarouselItems(newCount, posts, pageItem) {
-  const slides = document.querySelector(".carousel-slide");
-  slides.innerHTML = "";
-  getPrevCarouselItems(newCount, posts, pageItem);
-}
-
-//Refresh content when click on prev slide
-
-function getPrevCarouselItems(newCount, posts, pageItem) {
-  const slides = document.querySelector(".carousel-slide");
-  for (var i = newCount; i < posts.length; i--) {
-    if (i > 0) {
-      console.log("i :>> ", i);
-      console.log("count :>> ", newCount);
-      var imgUrl = posts[i].image;
-      var itemDiv = `
-                                  <a href="${posts.link}">
-          <div class="carousel-item" id="${posts[i].id}" >
-                                  <img src="${imgUrl}" alt="${posts[i].slug}" />
-                                  <p>${posts[i].title["rendered"]}</p>
-                                  </div>
-                                  </a>
-                                  `;
-      if (i === newCount + pageItem) {
-        count += pageItem;
-        slides.innerHTML += itemDiv;
-      } else {
-      }
-    }
+function moveToPrevSlide(totalItem, slideItems) {
+  if (slidePosition === 0) {
+    return;
+  } else {
+    slidePosition--;
+    updateButton();
   }
+  updateSlidePosition(slideItems);
+}
+
+function updateNextButton() {}
+
+function updateButton() {
+  prevButton.style.opacity = 0.2;
+  nextButton.style.opacity = 0.2;
+}
+
+function updateSlidePosition(slideItems) {
+  for (let slideItem of slideItems) {
+    slideItem.classList.remove("carousel-visible");
+    slideItem.classList.add("carousel-hidden");
+  }
+  slideItems[slidePosition].classList.add("carousel-visible");
 }

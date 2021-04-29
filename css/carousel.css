@@ -1,6 +1,7 @@
 .carousel {
   position: relative;
-  max-width: 100%;
+  width: 100vw;
+  height: 50vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -8,7 +9,7 @@
   margin: 100px 0px;
   background-color: rgb(185, 185, 185);
   box-shadow: 1px 2px rgb(160, 160, 160);
-  padding: 20px;
+  padding: 20px 20px 50px 20px;
 }
 
 .carousel h2 {
@@ -18,15 +19,15 @@
 .carousel .carousel-slide {
   display: flex;
   width: 100%;
+  height: 100%;
+
   justify-content: center;
 }
 
 .carousel-slide .carousel-item {
-  margin: 10px;
-  width: auto;
+  width: 100%;
   height: auto;
   display: flex;
-  box-shadow: 1px 1px 1px 1px gray;
   flex-direction: column;
   align-items: center;
   cursor: pointer;
@@ -35,13 +36,14 @@
 .carousel-slide .carousel-item a {
   text-decoration: none;
   cursor: pointer;
-  color: inherit;
-  width: fit-content;
-  height: fit-content;
+  color: teal;
+  width: auto;
+  height: auto;
 }
 
-.carousel-slide .carousel-item:hover {
-  box-shadow: 1px 1px 1px 1px rgb(4, 255, 255);
+.carousel-slide .carousel-item:hover img {
+  border: 1px solid rgb(4, 255, 255);
+  transition: all 0.2s ease-in-out;
   opacity: 0.8;
 }
 
@@ -51,33 +53,36 @@
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  width: 180px;
+  padding-left: 40px;
+  color: teal;
+  width: 380px;
 }
 .carousel-slide .carousel-item:hover p {
   color: rgb(4, 255, 255);
   opacity: 1;
 }
 
-.carousel .carousel-slide,
-.carousel-slide .carousel-hidden {
+.carousel-slide .carousel-item,
+.carousel-item .carousel-hidden {
   display: none;
 }
 
 .carousel-slide .carousel-item img {
-  height: 180px;
-  width: 180px;
+  height: 400px;
+  width: 400px;
   margin: 0px;
   object-fit: cover;
+  border-radius: 50%;
 }
 
 .carousel-slide p {
   position: absolute;
-  top: 80%;
+  top: 93%;
   opacity: 0.8;
   color: white;
 }
 
-.carousel .carousel-visible {
+.carousel-slide .carousel-visible {
   display: flex;
 }
 
@@ -86,7 +91,7 @@
   justify-content: space-between;
   position: absolute;
   top: 60%;
-  width: 80%;
+  width: 50vw;
   transform: translateY(-60%);
 }
 
