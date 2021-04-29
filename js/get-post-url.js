@@ -16,7 +16,6 @@ async function getUrl() {
       },
     });
     const postData = await responsePosts.json();
-    console.log("postData :>> ", postData);
     posts = postData.map(function (post, index) {
       return {
         id: index,
@@ -37,20 +36,51 @@ getUrl();
 function createCarousel(posts) {
   const slides = document.querySelector(".carousel-slide");
   getCarouselItems(count, posts, pageItem);
+
   document
     .getElementById("carousel-button-next")
     .addEventListener("click", function () {
-      moveToNextSlide(posts);
+      if (count === pageItem) {
+        moveToNextSlide(count, posts);
+      } else if (count > pageItem) {
+        moveToNextSlide(count, posts);
+      }
     });
   document
     .getElementById("carousel-button-prev")
     .addEventListener("click", function () {
-      moveToPrevSlide(posts);
+      if (count === pageItem) {
+        return;
+      } else {
+        moveToPrevSlide(count, posts);
+      }
     });
 }
 
+//Next slide function
+
+function moveToNextSlide(count, posts) {
+  //   console.log("count :>> ", count);
+  if (count === 12) {
+    nextButton.style.opacity = 0.2;
+  } else {
+    prevButton.style.opacity = 1;
+    nextButton.style.opacity = 1;
+  }
+  removeCarouselItems(count, posts, pageItem);
+}
+
+//Remove content, when clicking on Next Slide
+
+function removeCarouselItems(itemIndex, posts, itemPerSlide) {
+  const slides = document.querySelector(".carousel-slide");
+  slides.innerHTML = "";
+  getCarouselItems(itemIndex, posts, itemPerSlide);
+}
+
+//Load up content on init, refresh content when next slide click
+
 function getCarouselItems(itemIndex, posts, itemPerSlide) {
-  const totalPage = posts.length;
   const slides = document.querySelector(".carousel-slide");
   for (var i = itemIndex; i < posts.length; i++) {
     var imgUrl = posts[i].image;
@@ -71,19 +101,43 @@ function getCarouselItems(itemIndex, posts, itemPerSlide) {
   }
 }
 
-function removeCarouselItems(itemIndex, posts, itemPerSlide) {
+//Prev function
+
+function moveToPrevSlide(count, posts) {
+  var newCount = count - pageItem;
+  removePrevCarouselItems(newCount, posts, pageItem);
+}
+
+//Remove content, when clicking on prev slide
+
+function removePrevCarouselItems(newCount, posts, pageItem) {
   const slides = document.querySelector(".carousel-slide");
   slides.innerHTML = "";
-  getCarouselItems(itemIndex, posts, itemPerSlide);
+  getPrevCarouselItems(newCount, posts, pageItem);
 }
 
-function moveToNextSlide(posts) {
-  removeCarouselItems(count, posts, 4);
-  updateCount(count);
-}
-function moveToPrevSlide(posts) {
-  removeCarouselItems(count, posts, 4);
-  updateCount(count);
-}
+//Refresh content when click on prev slide
 
-function updateCount(count) {}
+function getPrevCarouselItems(newCount, posts, pageItem) {
+  const slides = document.querySelector(".carousel-slide");
+  for (var i = newCount; i < posts.length; i--) {
+    if (i > 0) {
+      console.log("i :>> ", i);
+      console.log("count :>> ", newCount);
+      var imgUrl = posts[i].image;
+      var itemDiv = `
+                                  <a href="${posts.link}">
+          <div class="carousel-item" id="${posts[i].id}" >
+                                  <img src="${imgUrl}" alt="${posts[i].slug}" />
+                                  <p>${posts[i].title["rendered"]}</p>
+                                  </div>
+                                  </a>
+                                  `;
+      if (i === newCount + pageItem) {
+        count += pageItem;
+        slides.innerHTML += itemDiv;
+      } else {
+      }
+    }
+  }
+}
