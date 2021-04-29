@@ -13,34 +13,39 @@
 .big-subject-container {
   height: 500px;
   width: 100%;
-  background: url("../assets/images/olivier-collet-JMwCe3w7qKk-unsplash.jpg")
-    center no-repeat;
-  background-size: cover;
+}
+
+.big-subject-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: -10;
 }
 
 .content-container .big-subject-container h2 {
   color: white;
   position: relative;
-  left: 36%;
-  top: 37%;
+  left: 35%;
+  top: -40%;
   padding: 5px;
   background-color: rgba(62, 224, 224, 0.226);
   cursor: pointer;
   width: fit-content;
 }
-.content-container .big-subject-container h3 {
+.content-container .big-subject-container a {
   color: white;
   position: relative;
   left: 46%;
-  top: 57%;
+  top: -30%;
   padding: 5px;
   background-color: rgb(62, 224, 224);
   cursor: pointer;
   width: fit-content;
   transition: all 0.4s;
+  text-decoration: none;
 }
 
-.content-container .big-subject-container h3:hover {
+.content-container .big-subject-container a:hover {
   background-color: teal;
 }
 
@@ -91,9 +96,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background: url("../assets/images/ilan-dov-oVqE9mHQBtQ-unsplash.jpg") center
-    no-repeat;
-  background-size: cover;
+  object-fit: cover;
   z-index: -1;
   transition: transform 4s;
 }
@@ -160,7 +163,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 3;
+  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
 
