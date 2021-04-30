@@ -81,6 +81,7 @@
   background-color: white;
   margin-bottom: 40px;
   width: 100%;
+  height: 30vh;
 }
 
 .image-content {
@@ -160,10 +161,10 @@
 .card-description {
   position: relative;
   color: rgb(72, 91, 98);
-  overflow: hidden;
+  overflow-x: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 1;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
 }
 

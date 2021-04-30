@@ -22,8 +22,8 @@ async function getUrl() {
         title: data.title,
         image: data.featured_media_src_url,
         slug: data.slug,
-        description: data.content,
-        data: data.date,
+        description: data.excerpt,
+        date: data.date,
       };
     });
     createContent(data);
@@ -39,30 +39,32 @@ function createContent(data) {
   console.log("data :>> ", data);
   for (var i = 0; i < 3; i++) {
     var imgUrl = data[i].image;
+    var text = data[i].description["rendered"];
+
     bigContainer.innerHTML = `
     <img src="${imgUrl}" alt="${data[i].slug}">
         <h2>${data[i].title["rendered"]}</h2>
         <a href="${data[i].link}">read more &rarr;</a>
         </img>
       `;
-    var cardDiv = `<div class="card"><div class="image-content">
-        <img class="background-image"src="${imgUrl}" alt="${data[i].slug}" ></img>
-        <div class="publication-details">
-          <a href="${data[i].link}" class="author">Minh Cong Bui</a>
-          <span class="date">${data[i].date}</span>
-        </div>
-      </div>
-      <div class="post-content">
-        <h2 class="card-title">${data[i].title["rendered"]}</h2>
-        <h3 class="card-subtitle">What you need to know</h3>
-        <p class="card-description">
-        ${data[i].description["rendered"]}
-        </p>
-        <div class="card-action">
-          <a href="${data[i].link}">Read more &rarr;</a>
-        </div>
-      </div>
-      </div>`;
+    var cardDiv = `<div class="card">
+                    <div class="image-content">
+                    <img class="background-image"src="${imgUrl}" alt="${data[i].slug}" ></img>
+                    <div class="publication-details">
+                    <a href="${data[i].link}" class="author">Minh Cong Bui</a>
+                    <span class="date">${data[i].date}</span>
+                    </div>
+                    </div>
+                    <div class="post-content">
+                    <h2 class="card-title">${data[i].title["rendered"]}</h2>
+                    <h3 class="card-subtitle">What you need to know</h3>
+                    <p class="card-description">${text}</p>
+                    <div class="card-action">
+                    <a href="${data[i].link}">Read more &rarr;</a>
+                    </div>
+                    </div>
+                    </div>
+                    `;
     smallContainer.innerHTML += cardDiv;
   }
 }

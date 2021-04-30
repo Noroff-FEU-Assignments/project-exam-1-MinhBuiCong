@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/contact.css" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -67,6 +68,61 @@
         <div class="line3"></div>
       </div>
     </nav>
+    <div class="contact-container">
+      <div class="message"></div>
+      <form>
+        <div class="formContainer">
+          <label class="formInput">
+            name *
+            <input name="name" id="name" placeholder="Name" />
+          </label>
+          <div class="formValid" id="nameValid">Your name is valid</div>
+          <div class="formError" id="nameError">Your name is required</div>
+        </div>
+        <div class="formContainer">
+          <label class="formInput">
+            subject *
+            <textarea
+              name="subject"
+              id="subject"
+              cols="30"
+              rows="10"
+              placeholder="Subject"
+            ></textarea>
+          </label>
+          <div class="formValid" id="subjectValid">Your subject is valid</div>
+          <div class="formError" id="subjectError">
+            Invalid (minimum 10 characters)
+          </div>
+        </div>
+        <div class="formContainer">
+          <label class="formInput">
+            e-mail *
+            <input name="email" id="email" placeholder="Email" />
+          </label>
+          <div class="formValid" id="emailValid">Your email is valid</div>
+          <div class="formError" id="emailError">Your email is invalid</div>
+        </div>
+        <div class="formContainer">
+          <label class="formInput">
+            Phone number *
+            <input
+              name="phone"
+              type="number"
+              id="phone"
+              placeholder="Phone number"
+            />
+          </label>
+          <div class="formValid" id="phoneValid">
+            Your phone number is valid
+          </div>
+          <div class="formError" id="phoneError">
+            Invalid (minimum 8 number)
+          </div>
+        </div>
+        <input type="submit" id="submit" />
+      </form>
+    </div>
     <footer>
       <div class="info-container">
         <div class="info-row">
@@ -94,5 +150,6 @@
       <h3>copyright minh cong bui 2021 c-label</h3>
     </footer>
     <script src="js/burger.js"></script>
+    <script src="js/contact.js"></script>
   </body>
 </html>
