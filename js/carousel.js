@@ -3,6 +3,7 @@ const carouselContainer = document.querySelector(".carousel");
 const prevButton = document.querySelector("#carousel-button-prev");
 const nextButton = document.querySelector("#carousel-button-next");
 let slidePosition = 0;
+const pageItem = 4;
 let posts;
 
 document.getElementById("carousel-button-prev").style.opacity = 0.2;
@@ -50,7 +51,7 @@ function createCarousel(posts) {
   var slideItems = document.querySelectorAll(".carousel-item");
   var totalItem = slideItems.length;
 
-  for (var i = 0; i < 4; i++) {
+  for (var i = 0; i < pageItem; i++) {
     slideItems[i].classList.add("carousel-visible");
   }
 
@@ -68,8 +69,8 @@ function createCarousel(posts) {
 }
 
 function moveToNextSlide(totalItem, slideItems) {
-  slidePosition += 4;
-  if (slidePosition + 4 >= totalItem - 1) {
+  slidePosition += pageItem;
+  if (slidePosition + pageItem >= totalItem - 1) {
     document.getElementById("carousel-button-next").disabled = true;
     nextButton.style.opacity = 0.2;
   }
@@ -82,7 +83,7 @@ function moveToPrevSlide(totalItem, slideItems) {
     prevButton.style.opacity = 0.2;
     return;
   } else {
-    slidePosition -= 4;
+    slidePosition -= pageItem;
     document.getElementById("carousel-button-next").disabled = false;
     nextButton.style.opacity = 1;
     updateButton();
@@ -99,7 +100,11 @@ function updateSlidePosition(slideItems, totalItem) {
     slideItem.classList.remove("carousel-visible");
     slideItem.classList.add("carousel-hidden");
   }
-  for (var i = slidePosition; i < slidePosition + 4 && i < totalItem; i++) {
+  for (
+    var i = slidePosition;
+    i < slidePosition + pageItem && i < totalItem;
+    i++
+  ) {
     slideItems[i].classList.add("carousel-visible");
   }
 }

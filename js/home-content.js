@@ -23,7 +23,7 @@ async function getUrl() {
         image: data.featured_media_src_url,
         slug: data.slug,
         description: data.excerpt,
-        date: data.date,
+        date: data.date.split("T")[0],
       };
     });
     createContent(data);
