@@ -4,24 +4,32 @@
   display: flex;
   flex-direction: column;
   align-content: center;
+  justify-content: center;
   text-align: center;
 }
 
 .formTitle {
-  color: white;
+  color: black;
   font-size: 32px;
   margin-bottom: 20px;
 }
 
 form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  border: 2px solid white;
-  margin: 0px 400px;
+
+  margin: 200px auto;
   padding: 20px;
+  width: 50vw;
+  height: 60vh;
+  border: 2px solid gray;
+  background-color: rgb(209, 209, 209);
 }
 
 .message {
-  color: white;
+  color: black;
 }
 
 .formValid {
@@ -41,7 +49,7 @@ form {
 }
 
 .formInput {
-  color: white;
+  color: teal;
   margin: 10px;
   font-size: 16px;
   text-transform: capitalize;
@@ -51,20 +59,26 @@ form {
 }
 
 input {
-  height: 24px;
+  height: 40px;
   width: 300px;
   margin-top: 10px;
   padding: 5px;
   border-radius: 5px;
+  font-size: 16px;
 }
 
 #subject {
+  height: 30px;
+  width: 300px;
+  margin-top: 20px;
+  padding: 5px;
+}
+
+#message {
   height: 100px;
   width: 300px;
   margin-top: 20px;
   padding: 5px;
-  padding-top: 10px;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 #submit {
@@ -73,7 +87,7 @@ input {
   width: 120px;
   font-size: 16px;
   color: white;
-  background-color: #ff8600;
+  background-color: teal;
   border: 2px solid white;
   border-radius: 5px;
 }
@@ -83,7 +97,7 @@ input {
 }
 
 .successMessage {
-  color: white;
+  color: black;
   font-size: 24px;
   margin-bottom: 20px;
 }

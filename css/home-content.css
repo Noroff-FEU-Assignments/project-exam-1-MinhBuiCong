@@ -63,8 +63,8 @@
   width: 80%;
 }
 
-.content-container .small-subject-container .subject-title {
-  margin-bottom: 40px;
+.content-container .subject-title {
+  margin: 40px 0px;
   color: teal;
   font-weight: bold;
   font-size: 56px;

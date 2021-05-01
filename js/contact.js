@@ -1,5 +1,5 @@
 const form = document.querySelector("form");
-const message = document.querySelector(".message");
+const feedback = document.querySelector(".message");
 const fullNameValid = document.querySelector("#nameValid");
 const fullNameError = document.querySelector("#nameError");
 const fullName = document.querySelector("#name");
@@ -9,9 +9,9 @@ const subject = document.querySelector("#subject");
 const emailValid = document.querySelector("#emailValid");
 const emailError = document.querySelector("#emailError");
 const email = document.querySelector("#email");
-const phoneValid = document.querySelector("#phoneValid");
-const phoneError = document.querySelector("#phoneError");
-const phone = document.querySelector("#phone");
+const messageValid = document.querySelector("#phoneValid");
+const messageError = document.querySelector("#phoneError");
+const message = document.querySelector("#phone");
 const submit = document.querySelector("#submit");
 
 function validateForm() {
@@ -19,7 +19,7 @@ function validateForm() {
 
   let form = true;
 
-  if (checkLength(fullName.value, 0) === true) {
+  if (checkLength(fullName.value, 4) === true) {
     fullNameError.style.display = "none";
     fullNameValid.style.display = "block";
   } else {
@@ -27,7 +27,7 @@ function validateForm() {
     fullNameValid.style.display = "none";
     form = false;
   }
-  if (checkLength(subject.value, 9) === true) {
+  if (checkLength(subject.value, 14) === true) {
     subjectError.style.display = "none";
     subjectValid.style.display = "block";
   } else {
@@ -43,12 +43,12 @@ function validateForm() {
     emailValid.style.display = "none";
     form = false;
   }
-  if (checkLength(phone.value, 7) === true) {
-    phoneError.style.display = "none";
-    phoneValid.style.display = "block";
+  if (checkLength(message.value, 24) === true) {
+    messageError.style.display = "none";
+    messageValid.style.display = "block";
   } else {
-    phoneError.style.display = "block";
-    phoneValid.style.display = "none";
+    messageError.style.display = "block";
+    messageValid.style.display = "none";
     form = false;
   }
   if (form === true) {

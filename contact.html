@@ -16,7 +16,7 @@
     <title>contact techblog</title>
   </head>
   <body>
-    <nav class="nav-container">
+    <nav class="nav-container" id="navbar">
       <div class="logo">
         <img src="./assets/techblog-logo/no-bg-logo.png" alt="logo" />
       </div>
@@ -81,6 +81,14 @@
         </div>
         <div class="formContainer">
           <label class="formInput">
+            e-mail *
+            <input name="email" id="email" placeholder="Email" />
+          </label>
+          <div class="formValid" id="emailValid">Your email is valid</div>
+          <div class="formError" id="emailError">Your email is invalid</div>
+        </div>
+        <div class="formContainer">
+          <label class="formInput">
             subject *
             <textarea
               name="subject"
@@ -97,27 +105,18 @@
         </div>
         <div class="formContainer">
           <label class="formInput">
-            e-mail *
-            <input name="email" id="email" placeholder="Email" />
+            message *
+            <textarea
+              name="message"
+              id="message"
+              cols="30"
+              rows="10"
+              placeholder="message"
+            ></textarea>
           </label>
-          <div class="formValid" id="emailValid">Your email is valid</div>
-          <div class="formError" id="emailError">Your email is invalid</div>
-        </div>
-        <div class="formContainer">
-          <label class="formInput">
-            Phone number *
-            <input
-              name="phone"
-              type="number"
-              id="phone"
-              placeholder="Phone number"
-            />
-          </label>
-          <div class="formValid" id="phoneValid">
-            Your phone number is valid
-          </div>
-          <div class="formError" id="phoneError">
-            Invalid (minimum 8 number)
+          <div class="formValid" id="messageValid">Your message is valid</div>
+          <div class="formError" id="messageError">
+            Invalid (minimum 25 characters)
           </div>
         </div>
         <input type="submit" id="submit" />
@@ -151,5 +150,6 @@
     </footer>
     <script src="js/burger.js"></script>
     <script src="js/contact.js"></script>
+    <script src="js/navbar.js"></script>
   </body>
 </html>
