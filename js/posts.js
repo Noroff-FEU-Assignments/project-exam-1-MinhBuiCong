@@ -39,30 +39,27 @@ getUrl();
 
 function createPosts(data) {
   for (let i = 0; i < data.length; i++) {
-    var bigDiv = `
-                <img src="${data[i].image}" alt="${data[i].slug}"/>
-                <div class="text-content">
-                <h2>${data[i].title["rendered"]}</h2>
-                <p>${data[i].description["rendered"]}</p>
-                <a href="../blog-detail.html?id=${data[i].link}">read more &rarr;</a>
-                </div>
-                `;
-    var smallDiv = ` 
-                <div class="small-card">           
-                <img src="${data[i].image}" alt="${data[i].slug}"/>
-                <div class="text-content">
-                <h3>${data[i].title["rendered"]}</h3>
-                <p>${data[i].description["rendered"]}</p>
-                <a href="../blog-detail.html?id=${data[i].link}">read more &rarr;</a>
-                </div>
-                </div>
-                `;
-
+    var cards = `
+                    <div class="image-content">
+                    <img class="background-image"src="${data[i].image}" alt="${data[i].slug}" ></img>
+                    <div class="publication-details">
+                    <a href="../blog-detail.html?id=${data[i].link}" class="author">Minh Cong Bui</a>
+                    <span class="date">${data[i].date}</span>
+                    </div>
+                    </div>
+                    <div class="post-content">
+                    <h2 class="card-title">${data[i].title["rendered"]}</h2>
+                    <h3 class="card-subtitle">sub-title</h3>
+                    <p class="card-description">${data[i].description["rendered"]}</p>
+                    <div class="card-action">
+                    <a href="../blog-detail.html?id=${data[i].link}">Read more &rarr;</a>
+                    </div>
+                    </div>`;
     if (i === 0) {
-      bigCard.innerHTML = bigDiv;
+      bigCard.innerHTML = cards;
     }
     if (i > 0) {
-      smallCardContainer.innerHTML += smallDiv;
+      smallCardContainer.innerHTML += `<div class="small-card">${cards}</div>`;
       let smallCard = document.querySelectorAll(".small-card");
       let totalCard = smallCard.length;
       addHiddenClass(smallCard, totalCard);
