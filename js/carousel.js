@@ -19,13 +19,14 @@ async function getUrl() {
     posts = postData.map(function (post, index) {
       return {
         id: index,
-        link: post.link,
+        link: post.id,
         title: post.title,
         image: post.featured_media_src_url,
         slug: post.slug,
       };
     });
     createCarousel(posts);
+    console.log("posts :>> ", postData);
   } catch (error) {
     carouselContainer.innerHTML = `<h2> Something is not right</h2>`;
     console.log("error :>> ", error);
@@ -39,7 +40,7 @@ function createCarousel(posts) {
   for (var i = 0; i < posts.length; i++) {
     var imgUrl = posts[i].image;
     var itemDiv = `
-      <a href="${posts[i].link}">
+      <a href="../blog-detail.html?id=${posts[i].link}">
       <div class="carousel-item" id="${posts[i].id}" >
       <img src="${imgUrl}" alt="${posts[i].slug}" />
       <p>${posts[i].title["rendered"]}</p>

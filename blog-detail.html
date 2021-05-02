@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/navbar.css" />
     <link rel="stylesheet" href="css/footer.css" />
+    <link rel="stylesheet" href="css/blog-detail.css" />
 
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
@@ -15,7 +16,7 @@
     <title>name of each blog</title>
   </head>
   <body>
-    <nav class="nav-container">
+    <nav class="nav-container" id="navbar">
       <div class="logo">
         <img src="./assets/techblog-logo/no-bg-logo.png" alt="logo" />
       </div>
@@ -67,6 +68,13 @@
         <div class="line3"></div>
       </div>
     </nav>
+    <div class="post-container"></div>
+    <div class="modal-container" id="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <div class="img-modal"></div>
+      </div>
+    </div>
     <footer>
       <div class="info-container">
         <div class="info-row">
@@ -94,5 +102,7 @@
       <h3>copyright minh cong bui 2021 c-label</h3>
     </footer>
     <script src="js/burger.js"></script>
+    <script src="js/post-detail.js"></script>
+    <!-- <script src="js/navbar.js"></script> -->
   </body>
 </html>

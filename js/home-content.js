@@ -14,11 +14,10 @@ async function getUrl() {
       },
     });
     const postData = await responsePosts.json();
-    console.log("postData :>> ", postData);
     data = postData.map(function (data, index) {
       return {
         id: index,
-        link: data.link,
+        link: data.id,
         title: data.title,
         image: data.featured_media_src_url,
         slug: data.slug,
@@ -29,29 +28,20 @@ async function getUrl() {
     createContent(data);
   } catch (error) {
     contentContainer.innerHTML = `<h1> Something is not right</h1>`;
-    console.log("error :>> ", error);
   }
 }
 
 getUrl();
 
 function createContent(data) {
-  console.log("data :>> ", data);
-  for (var i = 0; i < 3; i++) {
+  for (var i = 0; i < 4; i++) {
     var imgUrl = data[i].image;
     var text = data[i].description["rendered"];
-
-    bigContainer.innerHTML = `
-    <img src="${imgUrl}" alt="${data[i].slug}">
-        <h2>${data[i].title["rendered"]}</h2>
-        <a href="${data[i].link}">read more &rarr;</a>
-        </img>
-      `;
     var cardDiv = `<div class="card">
                     <div class="image-content">
                     <img class="background-image"src="${imgUrl}" alt="${data[i].slug}" ></img>
                     <div class="publication-details">
-                    <a href="${data[i].link}" class="author">Minh Cong Bui</a>
+                    <a href="../blog-detail.html?id=${data[i].link}" class="author">Minh Cong Bui</a>
                     <span class="date">${data[i].date}</span>
                     </div>
                     </div>
@@ -60,11 +50,21 @@ function createContent(data) {
                     <h3 class="card-subtitle">What you need to know</h3>
                     <p class="card-description">${text}</p>
                     <div class="card-action">
-                    <a href="${data[i].link}">Read more &rarr;</a>
+                    <a href="../blog-detail.html?id=${data[i].link}">Read more &rarr;</a>
                     </div>
                     </div>
                     </div>
                     `;
-    smallContainer.innerHTML += cardDiv;
+    if (i === 0) {
+      bigContainer.innerHTML = `
+      <img src="${imgUrl}" alt="${data[i].slug}">
+          <h2>${data[i].title["rendered"]}</h2>
+          <a href="../blog-detail.html?id=${data[i].link}">read more &rarr;</a>
+          </img>
+        `;
+    }
+    if (i > 0) {
+      smallContainer.innerHTML += cardDiv;
+    }
   }
 }
