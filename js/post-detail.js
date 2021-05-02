@@ -16,8 +16,8 @@ async function getPostId() {
     const postData = await responsePost.json();
     const responseCategories = await fetch(urlCategories);
     const postCategories = await responseCategories.json();
+
     const mappedCategories = createCategoryMap(postCategories);
-    console.log("Mapped categories: " + mappedCategories);
     var categoryNames = getCategoryNames(mappedCategories, postData.categories);
     console.log(mappedCategories);
 
