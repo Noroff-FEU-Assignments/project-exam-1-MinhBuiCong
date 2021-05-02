@@ -14,6 +14,7 @@ async function getUrl() {
       },
     });
     const postData = await responsePosts.json();
+    console.log("postData :>> ", postData);
     data = postData.map(function (data, index) {
       return {
         id: index,
@@ -58,7 +59,7 @@ function createContent(data) {
     if (i === 0) {
       bigContainer.innerHTML = `
       <img src="${imgUrl}" alt="${data[i].slug}">
-          <h2>${data[i].title["rendered"]}</h2>
+          <h1 class="big-title">${data[i].title["rendered"]}</h1>
           <a href="../blog-detail.html?id=${data[i].link}">read more &rarr;</a>
           </img>
         `;

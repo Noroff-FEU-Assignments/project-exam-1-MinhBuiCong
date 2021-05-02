@@ -1,5 +1,5 @@
 .content-container {
-  width: 100%;
+  width: 100vw;
   height: fit-content;
   display: flex;
   flex-direction: column;
@@ -7,47 +7,57 @@
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 150px;
   background-color: rgb(200, 200, 200);
 }
 
 .big-subject-container {
-  height: 500px;
+  height: fit-content;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .big-subject-container img {
   object-fit: cover;
   width: 100%;
-  height: 100%;
-  z-index: -10;
+  height: 50vh;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
 }
 
-.content-container .big-subject-container h2 {
-  color: white;
-  position: relative;
-  left: 35%;
-  top: -40%;
+.big-subject-container .big-title {
+  text-align: center;
+  color: teal;
   padding: 5px;
-  background-color: rgba(62, 224, 224, 0.226);
-  cursor: pointer;
-  width: fit-content;
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
 }
-.content-container .big-subject-container a {
-  color: white;
+
+.big-subject-container a {
+  color: rgb(11, 208, 208);
   position: relative;
-  left: 46%;
-  top: -30%;
-  padding: 5px;
-  background-color: rgb(62, 224, 224);
-  cursor: pointer;
-  width: fit-content;
-  transition: all 0.4s;
   text-decoration: none;
+  margin-bottom: 50px;
+  font-size: 1.5rem;
 }
 
-.content-container .big-subject-container a:hover {
+.big-subject-container a::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 100%;
+  height: 3px;
   background-color: teal;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s;
+}
+
+.big-subject-container a:hover::before {
+  transform: scaleX(1);
 }
 
 .big-subject-container p {
@@ -57,7 +67,7 @@
 }
 
 .content-container .small-subject-container {
-  margin: 100px 0px;
+  margin: 50px 0px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -65,7 +75,6 @@
 }
 
 .content-container .subject-title {
-  margin: 40px 0px;
   color: teal;
   font-weight: bold;
   font-size: 56px;
@@ -78,9 +87,10 @@
 .small-subject-container .card {
   display: flex;
   flex-direction: column;
-  box-shadow: 2px 2px 2px 2px rgb(141, 141, 141);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
   background-color: white;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
+  border-radius: 20px;
   width: 100%;
   height: 30vh;
 }
@@ -101,6 +111,7 @@
   object-fit: cover;
   z-index: -1;
   transition: transform 4s;
+  border-radius: 20px 0px 0px 20px;
 }
 
 .small-subject-container .card:hover .background-image {
@@ -143,6 +154,7 @@
   background-color: white;
   padding: 20px 30px;
   position: relative;
+  border-radius: 20px;
 }
 
 .card-title {

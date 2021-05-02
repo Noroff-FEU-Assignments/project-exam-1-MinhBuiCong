@@ -26,7 +26,6 @@ async function getUrl() {
       };
     });
     createCarousel(posts);
-    console.log("posts :>> ", postData);
   } catch (error) {
     carouselContainer.innerHTML = `<h2> Something is not right</h2>`;
     console.log("error :>> ", error);

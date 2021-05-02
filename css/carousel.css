@@ -46,7 +46,7 @@
 
 .carousel-slide .carousel-item:hover img {
   border: 1px solid rgb(4, 255, 255);
-  transition: all 0.2s ease-in-out;
+  transition: all 1s ease-in-out;
   opacity: 0.8;
   transform: scale(1.1);
 }
@@ -73,6 +73,7 @@
   object-fit: cover;
   border-radius: 50%;
   transform: scale(1);
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
 }
 .carousel-slide .carousel-item,
 .carousel-item .carousel-hidden {
@@ -84,6 +85,7 @@
   top: 80%;
   opacity: 0.8;
   color: white;
+  transition: all 0.2s ease-in-out;
 }
 
 .carousel-slide .carousel-visible {
@@ -108,6 +110,7 @@
   height: 30px;
   background-color: teal;
   color: white;
+  transition: all 0.2s ease-in-out;
 }
 
 .carousel .carousel-actions button:hover {
