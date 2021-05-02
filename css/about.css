@@ -17,7 +17,7 @@
   height: 300px;
   object-fit: cover;
   object-position: top;
-  opacity: 0.5;
+  opacity: 0.3;
 }
 
 .img-title {
@@ -68,13 +68,38 @@
 }
 
 .middle-content {
+  width: 100%;
+  height: 25%;
+}
+
+.middle-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.3;
+}
+
+.author-qoute {
+  position: absolute;
+  top: 90%;
+  left: 10%;
+}
+
+.author {
+  position: absolute;
+  top: 95%;
+  left: 35%;
+}
+
+.bottom-content {
   width: 80%;
   height: 25%;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  margin: 40px auto;
+  margin: 40px 0px;
 }
 
 .blog-content {
@@ -96,9 +121,42 @@
 }
 
 .blog-content-logo {
-  width: 50%;
+  width: 10%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.apply-job-content {
+  width: 100%;
+  height: 25%;
+}
+
+.bottom-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  object-position: bottom;
+  opacity: 0.3;
+}
+
+.apply-job-content a {
+  position: absolute;
+  width: 220px;
+  height: 50px;
+  padding-top: 10px;
+  text-decoration: none;
+  color: white;
+  background-color: teal;
+  text-align: center;
+  border-radius: 5px;
+  top: 155%;
+  left: 43%;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.apply-job-content a:hover {
+  background-color: rgb(7, 204, 204);
 }
