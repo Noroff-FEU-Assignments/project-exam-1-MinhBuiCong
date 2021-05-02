@@ -25,10 +25,22 @@ async function getPostId() {
                         <img id="openModal"src="${
                           postData.featured_media_src_url
                         }" alt="${postData.slug}"></img>
-                        <h1>${postData.title["rendered"]}</h1>
-                        <span>Minh Cong Bui</span>
-                        <code>${categoryNames.join(", ")}</code>
-                        <p>${postData.content["rendered"]}</p>
+                        <div class="text-content">
+                        <h1 class="post-title">${
+                          postData.title["rendered"]
+                        }</h1>
+                        <h2 class="post-subtitle">sub-title</h2>
+                        <span class="author">Author: Minh Cong Bui</span>
+                        <span class="published">Published: ${
+                          postData.date.split("T")[0]
+                        }</span>
+                        <p class="post-description">${
+                          postData.content["rendered"]
+                        }</p>
+                        <code class="categories">Categories: #${categoryNames.join(
+                          ", #"
+                        )}</code>
+                        </div
                         `;
     imgModal.innerHTML = `<img id="openModal"src="${postData.featured_media_src_url}" alt="${postData.slug}"></img>`;
 

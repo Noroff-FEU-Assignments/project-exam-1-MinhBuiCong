@@ -1,54 +1,96 @@
 .post-container {
   width: 100vw;
   height: fit-content;
-
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(238, 238, 238);
 }
 
 .post-container img {
-  width: 70vw;
+  width: 100vw;
   height: 50vh;
+  margin-bottom: 40px;
+  cursor: pointer;
   object-fit: cover;
   object-position: center;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
 }
 
-.modal-container {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0, 0, 0); /* Fallback color */
-  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+.text-content {
+  width: 60vw;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  border-radius: 5px;
+  margin-bottom: 100px;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
 }
 
-/* Modal Content */
+.post-title {
+  color: teal;
+  font-size: 28px;
+  margin: 40px 0px 20px 0px;
+  text-align: center;
+}
+
+.post-subtitle {
+  color: rgba(0, 128, 128, 0.767);
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+span {
+  color: rgb(155, 155, 155);
+  text-align: center;
+  margin: 10px;
+}
+
+p {
+  margin-top: 40px;
+  padding: 0px 50px;
+  color: rgb(172, 172, 172);
+}
+
+.categories {
+  padding-left: 50px;
+  margin-bottom: 40px;
+  color: rgb(255, 181, 44);
+}
+
+.modal-container {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.46);
+}
+
 .modal-content {
   background-color: #fefefe;
   margin: 200px auto;
-  padding: 20px;
+  padding: 50px;
   border: 1px solid #888;
-  width: 80%;
+  width: 50%;
 }
 
-/* The Close Button */
 .close {
   color: #aaaaaa;
-  float: right;
+  position: absolute;
+  right: 25.5%;
+  top: 30%;
   font-size: 28px;
   font-weight: bold;
+  transition: all 0.2s ease-in-out;
 }
 
 .close:hover,
 .close:focus {
-  color: #000;
+  color: black;
   text-decoration: none;
   cursor: pointer;
 }
@@ -57,4 +99,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+#openModal {
+  width: 100%;
 }
