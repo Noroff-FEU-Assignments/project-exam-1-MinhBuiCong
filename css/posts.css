@@ -5,7 +5,6 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 200px;
 }
 
 .view-more {
@@ -15,7 +14,7 @@ main {
 }
 
 .page-title {
-  margin-bottom: 20px;
+  margin: 20px 0px;
 }
 
 .page-subtitle {
