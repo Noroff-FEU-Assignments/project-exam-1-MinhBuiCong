@@ -44,7 +44,7 @@ function validateForm() {
     message.style.border = "2px solid green";
   } else {
     messageError.style.display = "flex";
-    message.style.border = "2px solid red";
+    message.style.border = "3px solid red";
     form = false;
   }
   if (form === true) {
