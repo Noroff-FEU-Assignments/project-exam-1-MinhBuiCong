@@ -54,7 +54,7 @@ form {
   width: 80%;
 }
 
-input {
+.form-input input {
   height: 50px;
   width: 100%;
   padding-left: 10px;
