@@ -27,7 +27,7 @@ async function getPostId() {
                         }" alt="${postData.slug}"></img>
                         <h1>${postData.title["rendered"]}</h1>
                         <span>Minh Cong Bui</span>
-                        <span>${categoryNames.join(", ")}</span>
+                        <code>${categoryNames.join(", ")}</code>
                         <p>${postData.content["rendered"]}</p>
                         `;
     imgModal.innerHTML = `<img id="openModal"src="${postData.featured_media_src_url}" alt="${postData.slug}"></img>`;
