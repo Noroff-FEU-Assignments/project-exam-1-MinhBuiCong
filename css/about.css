@@ -8,7 +8,7 @@
 
 .top-content {
   width: 100%;
-  height: 40vh;
+  height: fit-content;
   background-image: url("../assets/images/marvin-meyer-SYTO3xs06fU-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: top;
@@ -27,7 +27,6 @@
 
 .top-image {
   width: 100%;
-  height: 40vh;
   object-fit: cover;
   object-position: top;
   opacity: 0.3;
@@ -36,12 +35,13 @@
 .img-title {
   text-align: center;
   font-size: 2rem;
-  margin-bottom: 20px;
+  margin: 100px 0px 20px 0px;
 }
 
 .img-text {
   text-align: center;
   font-size: 0.8rem;
+  margin-bottom: 100px;
 }
 
 .about-text-content {
@@ -51,22 +51,23 @@
   justify-content: space-evenly;
   margin: auto;
   width: 80%;
-  height: 40vh;
+  height: fit-content;
 }
 
 .section {
   width: 25%;
-  height: 40vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin: 100px 0px;
 }
 
 .section img {
   width: 90px;
   height: 90px;
-  margin-bottom: 20px;
+  margin-bottom: 50px;
 }
 
 .section h2 {
@@ -82,7 +83,7 @@
 
 .middle-content {
   width: 100%;
-  height: 40vh;
+  height: fit-content;
   background-image: url("../assets/images/marvin-meyer-SYTO3xs06fU-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: center;
@@ -92,7 +93,7 @@
 .author-qoute {
   text-align: center;
   font-size: 1rem;
-  margin-bottom: 20px;
+  margin: 100px 0px 20px 0px;
   width: 70%;
 }
 
@@ -100,11 +101,12 @@
   width: 70%;
   text-align: center;
   font-size: 0.8rem;
+  margin-bottom: 100px;
 }
 
 .bottom-content {
   width: 70%;
-  height: 40vh;
+  height: fit-content;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -116,6 +118,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin: 100px 0px;
 }
 
 .blog-content-title {
@@ -130,18 +133,18 @@
 
 .blog-content-logo {
   flex: 1;
-  height: 100%;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .blog-content-logo img {
-  height: 60%;
+  height: 25vh;
 }
 
 .apply-job-content {
   width: 100%;
-  height: 40vh;
+  height: fit-content;
   background-image: url("../assets/images/marvin-meyer-SYTO3xs06fU-unsplash.jpg");
   background-repeat: no-repeat;
   background-position: bottom;
@@ -161,6 +164,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 100px 0px;
 }
 
 .apply-job-content a:hover {
@@ -168,18 +172,16 @@
 }
 
 @media screen and (max-width: 1200px) {
-  .top-content {
-    height: 30vh;
-  }
   .img-title {
     font-size: 1.5rem;
-    margin-bottom: 10px;
+    margin: 80px 0px 10px 0px;
   }
   .img-text {
     font-size: 0.6rem;
+    margin-bottom: 80px;
   }
-  .about-text-content {
-    height: fit-content;
+  .section {
+    margin: 80px 0px;
   }
   .section img {
     width: 60px;
@@ -189,22 +191,19 @@
     font-size: 0.8rem;
     margin-bottom: 10px;
   }
-
   .section p {
     font-size: 0.6rem;
   }
-  .middle-content {
-    height: 30vh;
-  }
   .author-qoute {
     font-size: 0.8rem;
-    margin-bottom: 10px;
+    margin: 80px 0px 10px 0px;
   }
   .author {
     font-size: 0.6rem;
+    margin-bottom: 80px;
   }
-  .bottom-content {
-    height: 30vh;
+  .blog-content {
+    margin: 80px 0px;
   }
   .blog-content-title {
     margin-bottom: 10px;
@@ -214,33 +213,29 @@
   .blog-content-text {
     font-size: 0.6rem;
   }
-  .apply-job-content {
-    height: 30vh;
+  .blog-content-logo img {
+    height: 15vh;
   }
   .apply-job-content a {
     font-size: 0.8rem;
+    margin: 80px 0px;
   }
 }
 
 @media screen and (max-width: 800px) {
-  .top-content {
-    height: 20vh;
-  }
   .about-text-content {
     height: fit-content;
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 80px;
+    padding-bottom: 30px;
   }
   .section {
     width: 100%;
     height: fit-content;
-    margin-bottom: 30px;
+    margin: 0px 0px 50px;
   }
   .section p {
     width: 70%;
-  }
-  .middle-content {
-    height: 20vh;
   }
   .author-qoute {
     width: 70%;
@@ -248,36 +243,34 @@
   .bottom-content {
     height: fit-content;
     flex-direction: column;
-    padding-top: 30px;
+    padding-top: 80px;
   }
   .blog-content {
     align-items: center;
-    margin-bottom: 30px;
+    margin: 0px 0px 50px 0px;
   }
   .blog-content-text {
     text-align: center;
   }
   .blog-content-logo {
-    margin-bottom: 30px;
-  }
-  .apply-job-content {
-    height: 20vh;
+    margin-bottom: 80px;
   }
 }
 
 @media screen and (max-width: 600px) {
-  .top-content {
-    height: 15vh;
-  }
   .img-title {
     font-size: 1rem;
+    margin-top: 50px;
     margin-bottom: 5px;
   }
+  .img-text {
+    margin-bottom: 50px;
+  }
   .about-text-content {
-    padding-top: 40px;
+    padding: 50px 0px 0px 0px;
   }
   .section {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
   .section img {
     width: 40px;
@@ -297,16 +290,17 @@
   .author-qoute {
     font-size: 0.7rem;
     width: 90%;
-    margin-top: 40px;
+    margin-top: 50px;
+    margin-bottom: 5px;
   }
   .author {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
   .bottom-content {
-    padding-top: 40px;
+    padding-top: 50px;
   }
   .blog-content {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
   .blog-content-title {
     margin-bottom: 5px;
@@ -316,14 +310,12 @@
     width: 110%;
   }
   .blog-content-logo {
-    margin-bottom: 40px;
-  }
-  .apply-job-content {
-    height: 15vh;
+    margin-bottom: 50px;
   }
   .apply-job-content a {
     font-size: 0.7rem;
     height: 30px;
     width: 150px;
+    margin: 50px 0px;
   }
 }
