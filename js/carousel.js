@@ -39,12 +39,13 @@ function createCarousel(posts) {
   for (var i = 0; i < posts.length; i++) {
     var imgUrl = posts[i].image;
     var itemDiv = `
-      <a href="../blog-detail.html?id=${posts[i].link}">
+      
       <div class="carousel-item" id="${posts[i].id}" >
-      <img src="${imgUrl}" alt="${posts[i].slug}" />
+      <a class="post-link" href="../blog-detail.html?id=${posts[i].link}">
+      <img class="carousel-image"src="${imgUrl}" alt="${posts[i].slug}" />
+      </a>
       <p>${posts[i].title["rendered"]}</p>
       </div>
-      </a>
       `;
     slides.innerHTML += itemDiv;
   }
