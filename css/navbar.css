@@ -135,6 +135,9 @@
     font-size: 0.8rem;
     letter-spacing: 0.1rem;
   }
+  .nav-logo {
+    width: 8vw;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -160,7 +163,7 @@
 
 @media screen and (max-width: 600px) {
   .nav-logo {
-    width: 22vw;
+    width: 18vw;
   }
   .dropdown-content a {
     font-size: 0.6rem;

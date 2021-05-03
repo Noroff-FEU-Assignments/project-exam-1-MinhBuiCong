@@ -168,12 +168,18 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .top-content {
+    height: 30vh;
+  }
   .img-title {
     font-size: 1.5rem;
     margin-bottom: 10px;
   }
   .img-text {
     font-size: 0.6rem;
+  }
+  .about-text-content {
+    height: 30vh;
   }
   .section img {
     width: 60px;
@@ -187,12 +193,18 @@
   .section p {
     font-size: 0.6rem;
   }
+  .middle-content {
+    height: 30vh;
+  }
   .author-qoute {
     font-size: 0.8rem;
     margin-bottom: 10px;
   }
   .author {
     font-size: 0.6rem;
+  }
+  .bottom-content {
+    height: 30vh;
   }
   .blog-content-title {
     margin-bottom: 10px;
@@ -201,6 +213,9 @@
 
   .blog-content-text {
     font-size: 0.6rem;
+  }
+  .apply-job-content {
+    height: 30vh;
   }
   .apply-job-content a {
     font-size: 0.8rem;
@@ -214,7 +229,7 @@
   .about-text-content {
     height: fit-content;
     flex-direction: column;
-    padding-top: 40px;
+    padding-top: 30px;
   }
   .section {
     width: 100%;
@@ -247,5 +262,61 @@
   }
   .apply-job-content {
     height: 20vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .top-content {
+    height: 15vh;
+  }
+  .img-title {
+    font-size: 1rem;
+    margin-bottom: 5px;
+  }
+  .about-text-content {
+    padding-top: 15px;
+  }
+  .section {
+    margin-bottom: 15px;
+  }
+  .section img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 10px;
+  }
+  .section h2 {
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+  }
+  .section p {
+    width: 90%;
+  }
+  .middle-content {
+    height: 15vh;
+  }
+  .author-qoute {
+    font-size: 0.7rem;
+    width: 90%;
+  }
+  .bottom-content {
+    padding-top: 15px;
+  }
+  .blog-content {
+    margin-bottom: 15px;
+  }
+  .blog-content-title {
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+  }
+  .blog-content-text {
+    width: 110%;
+  }
+  .apply-job-content {
+    height: 15vh;
+  }
+  .apply-job-content a {
+    font-size: 0.7rem;
+    height: 30px;
+    width: 150px;
   }
 }
