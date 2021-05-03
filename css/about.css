@@ -274,10 +274,10 @@
     margin-bottom: 5px;
   }
   .about-text-content {
-    padding-top: 15px;
+    padding-top: 40px;
   }
   .section {
-    margin-bottom: 15px;
+    margin-bottom: 40px;
   }
   .section img {
     width: 40px;
@@ -292,17 +292,21 @@
     width: 90%;
   }
   .middle-content {
-    height: 15vh;
+    height: fit-content;
   }
   .author-qoute {
     font-size: 0.7rem;
     width: 90%;
+    margin-top: 40px;
+  }
+  .author {
+    margin-bottom: 40px;
   }
   .bottom-content {
-    padding-top: 15px;
+    padding-top: 40px;
   }
   .blog-content {
-    margin-bottom: 15px;
+    margin-bottom: 40px;
   }
   .blog-content-title {
     margin-bottom: 5px;
@@ -310,6 +314,9 @@
   }
   .blog-content-text {
     width: 110%;
+  }
+  .blog-content-logo {
+    margin-bottom: 40px;
   }
   .apply-job-content {
     height: 15vh;
