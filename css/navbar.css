@@ -39,7 +39,6 @@
 
 .nav-logo {
   width: 6vw;
-  margin: 10px;
 }
 
 .nav-link-container {
@@ -149,7 +148,7 @@
     align-items: center;
   }
   .nav-logo {
-    width: 15vw;
+    width: 13vw;
   }
   .section-2 {
     display: none;
@@ -164,7 +163,7 @@
 
 @media screen and (max-width: 600px) {
   .nav-logo {
-    width: 18vw;
+    width: 15vw;
   }
   .dropdown-content a {
     font-size: 0.6rem;
@@ -175,7 +174,7 @@
 }
 @media screen and (max-width: 400px) {
   .nav-logo {
-    width: 25vw;
+    width: 22vw;
   }
   .dropdown-content {
     width: 20vw;
