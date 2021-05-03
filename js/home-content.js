@@ -42,13 +42,13 @@ function createContent(data) {
                     <div class="image-content">
                     <img class="background-image"src="${imgUrl}" alt="${data[i].slug}" ></img>
                     <div class="publication-details">
-                    <a href="../blog-detail.html?id=${data[i].link}" class="author">Minh Cong Bui</a>
-                    <span class="date">${data[i].date}</span>
+                    <a href="../blog-detail.html?id=${data[i].link}" class="author">Author: Minh Cong Bui</a>
+                    <span class="date">Published: ${data[i].date}</span>
                     </div>
                     </div>
                     <div class="post-content">
                     <h2 class="card-title">${data[i].title["rendered"]}</h2>
-                    <h3 class="card-subtitle">What you need to know</h3>
+                    <h3 class="card-subtitle">sub-title</h3>
                     <p class="card-description">${text}</p>
                     <div class="card-action">
                     <a href="../blog-detail.html?id=${data[i].link}">Read more &rarr;</a>
@@ -57,11 +57,11 @@ function createContent(data) {
                     </div>
                     `;
     if (i === 0) {
-      bigContainer.innerHTML = `
-      <img src="${imgUrl}" alt="${data[i].slug}">
+      bigContainer.style.backgroundImage = `url("${imgUrl}")`;
+      bigContainer.innerHTML = `<div class="layer">
           <h1 class="big-title">${data[i].title["rendered"]}</h1>
-          <a href="../blog-detail.html?id=${data[i].link}">read more &rarr;</a>
-          </img>
+          <a href="../blog-detail.html?id=${data[i].link}">read more</a>
+          </div>
         `;
     }
     if (i > 0) {
