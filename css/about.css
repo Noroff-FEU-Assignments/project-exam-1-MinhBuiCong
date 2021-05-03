@@ -179,7 +179,7 @@
     font-size: 0.6rem;
   }
   .about-text-content {
-    height: 30vh;
+    height: fit-content;
   }
   .section img {
     width: 60px;
