@@ -10,13 +10,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 15vh;
+  height: fit-content;
   width: 80vw;
   margin: auto;
 }
 
 .nav-section {
-  height: 15vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,6 +39,7 @@
 
 .nav-logo {
   width: 6vw;
+  margin: 20px;
 }
 
 .nav-link-container {
