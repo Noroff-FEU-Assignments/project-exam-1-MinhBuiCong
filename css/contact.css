@@ -170,8 +170,156 @@ input[type="text"]:focus {
 }
 
 @media screen and (max-width: 1200px) {
+  .contact-container {
+    margin: 80px auto;
+  }
+  .title {
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+  }
+  .sub-title {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
+  .form-input {
+    font-size: 0.6rem;
+    font-weight: normal;
+  }
+
+  .form-input input {
+    padding: 10px 5px;
+    margin: 10px 0px;
+    font-size: 0.6rem;
+    height: 40px;
+  }
+  .form-error {
+    font-size: 0.6rem;
+  }
+
+  #message {
+    margin: 10px 0px 20px 0px;
+    padding: 5px;
+    font-size: 0.6rem;
+  }
+
+  #submit {
+    height: 40px;
+    width: 80%;
+    font-size: 0.8rem;
+    margin-bottom: 50px;
+  }
+  .opener-title {
+    margin-top: 70px;
+    margin-bottom: 60px;
+    font-size: 1rem;
+  }
+  .section {
+    margin-bottom: 20px;
+  }
+  .section img {
+    width: 25px;
+    height: 25px;
+    margin: 20px 20px 20px 50px;
+  }
+  .bold {
+    font-size: 0.6rem;
+  }
+
+  .bold p {
+    font-weight: 300;
+    margin-left: 10px;
+  }
 }
 @media screen and (max-width: 800px) {
+  .contact-container {
+    flex-direction: column;
+    margin: 50px auto;
+  }
+  form {
+    width: 80%;
+    margin-bottom: 50px;
+    border-radius: 5px;
+  }
+  .opener-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .opener-main {
+    width: 80%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    padding-bottom: 30px;
+  }
+  .opener-title {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    font-size: 1rem;
+  }
+  .section {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    margin-bottom: 00px;
+  }
+  .section img {
+    margin: 20px 20px 20px 10px;
+  }
+  .bold {
+    margin-right: 0px;
+  }
+  .bold p {
+    margin-left: 20px;
+    -webkit-line-clamp: 2;
+  }
 }
 @media screen and (max-width: 600px) {
+  .title {
+    margin-bottom: 5px;
+    font-size: 1rem;
+  }
+  .sub-title {
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+  }
+
+  .form-input input {
+    padding: 5px 5px;
+    margin: 5px 0px;
+    font-size: 0.6rem;
+    height: 30px;
+  }
+
+  #message {
+    margin: 5px 0px 10px 0px;
+    padding: 5px;
+    font-size: 0.6rem;
+  }
+
+  #submit {
+    height: 30px;
+    width: 80%;
+    font-size: 0.7rem;
+    margin-bottom: 50px;
+  }
+  .opener-title {
+    font-size: 0.8rem;
+  }
+  .section {
+    margin-bottom: 10px;
+  }
+  .section img {
+    width: 25px;
+    height: 25px;
+    margin: 20px 10px 20px 5px;
+  }
+  .bold {
+    font-size: 0.6rem;
+  }
+
+  .bold p {
+    margin-left: 5px;
+  }
 }
