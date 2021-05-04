@@ -24,6 +24,8 @@
   margin-bottom: 50px;
 }
 
+/*latest post content*/
+
 .carousel-item {
   transition: transform 1s;
   width: 200px;
@@ -90,6 +92,8 @@
   flex-direction: column;
   height: auto;
 }
+
+/*button*/
 
 .carousel .carousel-actions {
   display: flex;

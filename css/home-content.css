@@ -70,7 +70,7 @@
 }
 /*main small card */
 .content-container .small-subject-container {
-  margin-bottom: 100px;
+  margin-bottom: 0px;
   display: flex;
   flex-direction: column;
   align-items: center;

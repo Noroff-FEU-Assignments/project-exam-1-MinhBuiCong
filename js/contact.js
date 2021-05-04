@@ -9,6 +9,8 @@ const subject = document.querySelector("#subject");
 const messageError = document.querySelector("#message-error");
 const message = document.querySelector("#message");
 const submit = document.querySelector("#submit");
+const openerContainer = document.querySelector(".opener-container");
+const opener = document.querySelector(".opener");
 
 function validateForm() {
   event.preventDefault();
@@ -67,4 +69,8 @@ function validateEmail(email) {
   const regEx = /\S+@\S+\.\S+/;
   const patternMatches = regEx.test(email);
   return patternMatches;
+}
+
+function openMore() {
+  opener.style.display = "none";
 }
