@@ -11,10 +11,10 @@
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
 }
 
-.carousel h2 {
+.carousel .carousel-title {
   color: black;
   font-size: 1rem;
-  margin: 50px 0px;
+  margin: 100px 0px 50px 0px;
 }
 
 .carousel-slide {
@@ -51,12 +51,13 @@
   display: -webkit-box;
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
-  top: 88%;
+  top: 82%;
   left: 0;
   font-size: 0.8rem;
   background-image: linear-gradient(rgba(0, 0, 0, 0.233), rgb(3, 3, 3));
   border-radius: 0px 0px 5px 5px;
   padding: 0px 10px;
+  height: 30px;
 }
 
 .carousel-item:hover img {
@@ -92,96 +93,144 @@
 
 .carousel .carousel-actions {
   display: flex;
-  justify-content: space-between;
-  position: absolute;
-  top: 55%;
-  width: 80vw;
+  justify-content: center;
+  width: 100%;
 }
 
 .carousel .carousel-actions button {
-  border-radius: 50%;
+  border-radius: 5px;
   border: 0;
-  font-weight: bold;
   cursor: pointer;
-  width: 30px;
+  width: 200px;
   height: 30px;
   background-color: black;
   color: white;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.1s ease-in-out;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
+  margin-bottom: 100px;
+  justify-content: center;
 }
 
 .carousel .carousel-actions button:hover {
-  background-color: white;
-  color: black;
+  background-color: rgb(80, 80, 80);
 }
 
 .carousel .carousel-actions button#carousel-button-prev {
-  margin-left: 20px;
+  margin-right: 25px;
 }
 .carousel .carousel-actions button#carousel-button-next {
-  margin-right: 20px;
+  margin-left: 25px;
 }
 
-/* .carousel .carousel-slide {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 100px;
+@media screen and (max-width: 1200px) {
+  .carousel {
+    margin-bottom: 80px;
+  }
+  .carousel .carousel-title {
+    font-size: 0.8rem;
+    margin-top: 80px;
+  }
+  .carousel-item {
+    width: 150px;
+    margin: 0px 25px;
+  }
+  .carousel-image {
+    width: 150px;
+    height: 150px;
+  }
+  /* change to tablet format, since they can't get the hover effect*/
+  .carousel-item:hover p {
+    position: relative;
+    font-size: 0.6rem;
+    background: none;
+    color: black;
+    height: 20px;
+    top: 0%;
+    padding: 0px;
+  }
+  .carousel-item p {
+    position: relative;
+    color: black;
+    height: 20px;
+    width: 150px;
+    font-size: 0.6rem;
+    margin-top: 10px;
+  }
+  .carousel .carousel-actions button {
+    width: 150px;
+    height: 30px;
+    margin-bottom: 80px;
+  }
 }
-
-.carousel-slide .carousel-item {
-  margin: 0px 50px;
-  overflow: hidden;
+@media screen and (max-width: 900px) {
+  .carousel-item {
+    margin: 0px 10px;
+  }
+  .carousel .carousel-actions button#carousel-button-prev {
+    margin-right: 10px;
+  }
+  .carousel .carousel-actions button#carousel-button-next {
+    margin-left: 10px;
+  }
 }
-
-.post-link:hover .carousel-item img {
-  transition: all 2s ease-in-out;
-  height: 300px;
-  width: 300px;
-  position: absolute;
-  left: 30%;
-  top: 0;
+@media screen and (max-width: 800px) {
+  .carousel .carousel-title {
+    margin-top: 50px;
+  }
+  .carousel-slide {
+    flex-direction: column;
+    margin-bottom: 0px;
+  }
+  .carousel-item {
+    margin: 0px 0px 50px 0px;
+    width: 250px;
+    height: 250px;
+    z-index: 1;
+  }
+  .carousel-image {
+    width: 250px;
+    height: 250px;
+  }
+  .carousel-item p {
+    width: 250px;
+  }
+  .carousel .carousel-actions {
+    justify-content: space-between;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+  .carousel .carousel-actions button {
+    width: 50px;
+    height: 100%;
+    margin-bottom: 0px;
+    background-color: rgb(97, 97, 97);
+  }
+  .carousel .carousel-actions button:hover {
+    background-color: rgb(153, 153, 153);
+  }
 }
-
-.carousel-slide .carousel-item:hover img {
-  border: 1px solid rgb(4, 255, 255);
-  transition: all 1s ease-in-out;
-  opacity: 0.8;
-  transform: scale(1.1);
+@media screen and (max-width: 600px) {
+  .carousel {
+    margin-bottom: 50px;
+  }
+  .carousel .carousel-title {
+    margin-top: 50px;
+    font-size: 0.7rem;
+  }
+  .carousel-item {
+    margin: 0px 0px 50px 0px;
+    width: 150px;
+    height: 150px;
+    z-index: 1;
+  }
+  .carousel-image {
+    width: 150px;
+    height: 150px;
+  }
+  .carousel-item p {
+    margin-top: 5px;
+    width: 150px;
+  }
 }
-
-.carousel-slide .carousel-item p {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-line-clamp: 1;
-  -webkit-box-orient: vertical;
-  color: teal;
-  width: 200px;
-  text-align: center;
-}
-.carousel-slide .carousel-item:hover p {
-  color: rgb(4, 255, 255);
-  opacity: 1;
-}
-
-.carousel-slide .carousel-item img {
-  height: 250px;
-  width: 250px;
-  object-fit: cover;
-  border-radius: 5px;
-  transform: scale(1);
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
-} */
-
-/* .carousel-slide p {
-  position: absolute;
-  top: 80%;
-  opacity: 0.8;
-  color: white;
-  transition: all 0.2s ease-in-out;
-  z-index: -1;
-} */

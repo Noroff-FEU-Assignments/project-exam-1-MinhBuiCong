@@ -4,6 +4,7 @@ const prevButton = document.querySelector("#carousel-button-prev");
 const nextButton = document.querySelector("#carousel-button-next");
 let slidePosition = 0;
 const pageItem = 4;
+
 let posts;
 
 document.getElementById("carousel-button-prev").style.opacity = 0.2;
@@ -37,6 +38,7 @@ getUrl();
 function createCarousel(posts) {
   const slides = document.querySelector(".carousel-slide");
   for (var i = 0; i < posts.length; i++) {
+    var dot = document.querySelector(".dot");
     var imgUrl = posts[i].image;
     var itemDiv = `
       
@@ -73,7 +75,7 @@ function moveToNextSlide(totalItem, slideItems) {
   slidePosition += pageItem;
   if (slidePosition + pageItem >= totalItem - 1) {
     document.getElementById("carousel-button-next").disabled = true;
-    nextButton.style.opacity = 0.2;
+    nextButton.style.opacity = 0.1;
   }
   prevButton.style.opacity = 1;
   updateSlidePosition(slideItems, totalItem);
@@ -81,7 +83,7 @@ function moveToNextSlide(totalItem, slideItems) {
 
 function moveToPrevSlide(totalItem, slideItems) {
   if (slidePosition === 0) {
-    prevButton.style.opacity = 0.2;
+    prevButton.style.opacity = 0.1;
     return;
   } else {
     slidePosition -= pageItem;
@@ -93,7 +95,9 @@ function moveToPrevSlide(totalItem, slideItems) {
 }
 
 function updateButton() {
-  if (slidePosition === 0) prevButton.style.opacity = 0.2;
+  if (slidePosition === 0) {
+    prevButton.style.opacity = 0.1;
+  }
 }
 
 function updateSlidePosition(slideItems, totalItem) {
