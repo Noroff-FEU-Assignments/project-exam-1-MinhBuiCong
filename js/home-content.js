@@ -59,8 +59,10 @@ function createContent(data) {
     if (i === 0) {
       bigContainer.style.backgroundImage = `url("${imgUrl}")`;
       bigContainer.innerHTML = `<div class="layer">
-          <h1 class="big-title">${data[i].title["rendered"]}</h1>
-          <a href="../blog-detail.html?id=${data[i].link}">read more</a>
+          <h1 class="big-title">Welcome to Techblog</h1>
+          <p class="text">
+            We are a blogpage that loves to write about anything with technology
+          </p>
           </div>
         `;
     }

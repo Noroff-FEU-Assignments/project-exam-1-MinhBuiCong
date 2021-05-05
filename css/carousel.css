@@ -220,6 +220,7 @@
 @media screen and (max-width: 600px) {
   .carousel {
     margin-bottom: 50px;
+    overflow-x: hidden;
   }
   .carousel .carousel-title {
     margin-top: 50px;
@@ -235,9 +236,32 @@
     width: 150px;
     height: 150px;
   }
+  .carousel-item:hover p {
+    font-size: 0.6rem;
+    height: fit-content;
+  }
   .carousel-item p {
     font-size: 0.6rem;
     margin-top: 0px;
     width: 150px;
+  }
+  .carousel .carousel-actions button {
+    width: fit-content;
+    padding: 0px 20px;
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .carousel .carousel-actions button {
+    padding: 0px 10px;
+    margin: 0px;
+    width: fit-content;
+  }
+  .carousel .carousel-actions button#carousel-button-prev {
+    margin-right: 0px;
+  }
+  .carousel .carousel-actions button#carousel-button-next {
+    margin-left: 0px;
   }
 }
