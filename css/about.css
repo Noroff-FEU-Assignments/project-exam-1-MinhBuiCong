@@ -40,7 +40,7 @@
 
 .img-text {
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 100px;
   text-shadow: white 0px 0px 3px;
 }
@@ -72,12 +72,12 @@
 }
 
 .section h2 {
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin-bottom: 20px;
 }
 
 .section p {
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-align: center;
   line-height: 1.5;
 }
@@ -93,7 +93,7 @@
 
 .author-qoute {
   text-align: center;
-  font-size: 1rem;
+  font-size: 1.5rem;
   margin: 100px 0px 20px 0px;
   width: 70%;
   text-shadow: white 0px 0px 3px;
@@ -102,7 +102,7 @@
 .author {
   width: 70%;
   text-align: center;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-bottom: 100px;
   text-shadow: white 0px 0px 3px;
 }
@@ -126,12 +126,12 @@
 
 .blog-content-title {
   margin-bottom: 20px;
-  font-size: 1rem;
+  font-size: 1.5rem;
 }
 
 .blog-content-text {
   line-height: 1.5;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .blog-content-logo {
@@ -155,9 +155,9 @@
 }
 
 .apply-job-content a {
-  width: 220px;
+  width: fit-content;
   height: 50px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   border-radius: 5px;
   color: white;
   background-color: rgb(47, 47, 47);
@@ -168,6 +168,7 @@
   justify-content: center;
   align-items: center;
   margin: 100px 0px;
+  padding: 5px 10px;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
 }
 
@@ -181,7 +182,7 @@
     margin: 80px 0px 10px 0px;
   }
   .img-text {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     margin-bottom: 80px;
   }
   .section {
@@ -192,18 +193,18 @@
     height: 60px;
   }
   .section h2 {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-bottom: 10px;
   }
   .section p {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .author-qoute {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 80px 0px 10px 0px;
   }
   .author {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     margin-bottom: 80px;
   }
   .blog-content {
@@ -211,17 +212,17 @@
   }
   .blog-content-title {
     margin-bottom: 10px;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
 
   .blog-content-text {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .blog-content-logo img {
     height: 15vh;
   }
   .apply-job-content a {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin: 80px 0px;
   }
 }
@@ -239,15 +240,15 @@
     margin: 0px 0px 50px 0px;
   }
   .section p {
-    width: 70%;
+    width: 80%;
   }
   .author-qoute {
-    width: 70%;
+    width: 80%;
   }
   .bottom-content {
     height: fit-content;
     flex-direction: column;
-    padding-top: 80px;
+    width: 80%;
   }
   .blog-content {
     align-items: center;
@@ -268,9 +269,11 @@
   }
   .img-text {
     margin-bottom: 50px;
+    font-size: 0.6rem;
   }
   .about-text-content {
     padding: 50px 0px 0px 0px;
+    width: 90%;
   }
   .section {
     margin-bottom: 50px;
@@ -281,44 +284,43 @@
     margin-bottom: 10px;
   }
   .section h2 {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     margin-bottom: 5px;
   }
   .section p {
     width: 90%;
+    font-size: 0.6rem;
   }
   .middle-content {
     height: fit-content;
   }
   .author-qoute {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     width: 90%;
     margin-top: 50px;
     margin-bottom: 5px;
   }
   .author {
     margin-bottom: 50px;
+    font-size: 0.6rem;
   }
-  .bottom-content {
-    padding-top: 50px;
-  }
+
   .blog-content {
     margin-bottom: 50px;
   }
   .blog-content-title {
     margin-bottom: 5px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .blog-content-text {
-    width: 110%;
+    font-size: 0.6rem;
   }
   .blog-content-logo {
     margin-bottom: 50px;
   }
   .apply-job-content a {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     height: 30px;
-    width: 150px;
     margin: 50px 0px;
   }
 }
