@@ -10,18 +10,45 @@ main {
   background-color: rgb(238, 238, 238);
 }
 
+/* image content top */
+
+.introduction-content {
+  background-image: url("../assets/images/ales-nesetril-Im7lZjxeLhg-unsplash.jpg");
+  background-repeat: no-repeat;
+  background-position: top;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 100px;
+}
+
+.introduction-layer {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.109);
+  position: absolute;
+}
 .page-title {
-  margin: 40px 0px 20px 0px;
-  color: teal;
+  margin: 100px 0px 20px 0px;
+  color: white;
+  font-size: 2rem;
+  text-shadow: black 0px 0px 3px;
 }
 
 .page-subtitle {
-  margin-bottom: 20px;
-  color: rgba(0, 128, 128, 0.76);
+  margin-bottom: 100px;
+  color: white;
+  font-size: 1rem;
+  text-shadow: black 0px 0px 3px;
 }
 
+/* Post container  */
+
 .posts {
-  margin: 50px 0px;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,11 +56,12 @@ main {
 }
 
 .view-more {
-  width: 100px;
-  height: 50px;
+  width: fit-content;
+  font-size: 1rem;
   margin-bottom: 100px;
+  padding: 10px;
   color: white;
-  background-color: teal;
+  background-color: black;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -48,38 +76,33 @@ main {
 
 /*Styling of big card*/
 
-.big-card a {
-  text-decoration: none;
-  color: inherit;
-}
-
 .big-card {
   display: flex;
   flex-direction: row;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
   background-color: white;
-  margin-bottom: 80px;
-  border-radius: 20px;
+  margin-bottom: 100px;
+  border-radius: 5px;
   width: 100%;
-  height: 40vh;
+  height: fit-content;
 }
 .big-card .image-content {
-  height: 40vh;
   width: 50%;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  border-radius: 20px 0px 0px 20px;
+  border-radius: 5px 0px 0px 5px;
 }
 
 .big-card:hover .background-image {
   transform: scale(1.2);
-  border-radius: 20px 0px 0px 20px;
+  object-fit: cover;
+  position: absolute;
+  top: 0%;
+  left: 0;
+  z-index: -1;
 }
 
-.big-card.post-content {
-  flex-basis: 80%;
-}
 .big-card .post-content::before {
   content: "";
   width: 35px;
@@ -96,44 +119,39 @@ main {
   background-color: white;
   padding: 20px 30px;
   position: relative;
-  border-radius: 20px;
-  width: 50%;
-  height: 40vh;
+  flex-basis: 80%;
 }
 
 .big-card .card-title {
-  margin: 20px 0px 10px 0px;
-  font-size: 30px;
-  line-height: 1.2;
-  color: rgb(12, 156, 156);
+  margin: 20px 0px 20px 0px;
+  font-size: 1.5rem;
+  color: black;
 }
 
 .big-card .card-subtitle {
-  font-size: 20px;
-  font-weight: 400;
-  text-transform: capitalize;
-  color: gray;
-  margin-bottom: 40px;
+  font-size: 1.3rem;
+  color: black;
+  margin-bottom: 20px;
 }
 
 .big-card .card-description {
-  position: relative;
-  color: rgb(72, 91, 98);
+  color: rgb(61, 61, 61);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 4;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  font-size: 18px;
+  font-size: 1rem;
 }
 .big-card .card-action {
   text-align: right;
   font-weight: bold;
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
-.big-card .post-content a {
-  margin-right: 10px;
+.big-card .card-action a {
+  color: black;
+  text-decoration: none;
 }
 
 /* Styling of small-cards*/
@@ -141,7 +159,7 @@ main {
 .small-card-section {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 50px;
+  gap: 100px;
   justify-content: space-evenly;
   align-items: center;
   justify-content: center;
@@ -153,44 +171,38 @@ main {
   flex-direction: column;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
   background-color: white;
-  border-radius: 20px;
+  border-radius: 5px;
   width: 100%;
-  height: 45vh;
-}
-.small-card a {
-  text-decoration: none;
-  color: inherit;
+  height: 50vh;
 }
 
 .small-card .image-content {
-  height: 20vh;
+  height: 100%;
   width: 100%;
   position: relative;
   z-index: 1;
   overflow: hidden;
-  border-radius: 20px 20px 0px 0px;
+  border-radius: 5px 5px 0px 0px;
 }
 
 .small-card:hover .background-image {
   transform: scale(1.2);
+  position: absolute;
 }
 
 .small-card .post-content {
   background-color: white;
   padding: 20px 20px;
   position: relative;
-  border-radius: 20px;
   width: 100%;
-  height: 10vh;
+  height: fit-content;
 }
 
 .small-card .card-title {
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   padding: 2px;
-  font-size: 18px;
-  line-height: 1;
-  color: rgb(12, 156, 156);
+  font-size: 1rem;
+  color: black;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -199,34 +211,35 @@ main {
 }
 
 .small-card .card-subtitle {
-  font-size: 16px;
+  font-size: 0.9rem;
   font-weight: 400;
   text-transform: capitalize;
-  color: gray;
-  margin: 10px 0px 15px 0px;
-  padding: 2px;
+  color: black;
+  margin-bottom: 20px;
 }
 
 .small-card .card-description {
-  position: relative;
-  color: rgb(72, 91, 98);
+  color: rgb(30, 30, 31);
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
-  font-size: 16px;
+  font-size: 0.8rem;
+  margin-bottom: 20px;
 }
 
 .small-card .card-action {
   text-align: right;
   font-weight: bold;
-  margin-top: 10px;
 }
 
 .small-card .post-content a {
-  font-size: 16px;
+  font-size: 0.9rem;
   margin-right: 10px;
+  margin-bottom: 20px;
+  text-decoration: none;
+  color: black;
 }
 
 .hidden {
@@ -242,6 +255,7 @@ main {
   top: 0;
   left: 0;
   object-fit: cover;
+  object-position: center;
   z-index: -1;
   transition: transform 4s;
 }
@@ -255,7 +269,7 @@ main {
     rgba(110, 164, 195, 0.52)
   );
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1rem;
   color: white;
   position: absolute;
   top: 0;
@@ -285,14 +299,18 @@ main {
   transform: translateY(-30px);
   opacity: 0;
   display: inline-block;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   transition: all 0.5s;
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
 }
 .date {
   transform: translateY(30px);
   opacity: 0;
   transition: all 0.5s;
   display: block;
+  font-size: 1rem;
 }
 
 .author:hover {
@@ -300,7 +318,6 @@ main {
 }
 
 .card-action a {
-  color: teal;
   position: relative;
 }
 
@@ -311,7 +328,7 @@ main {
   bottom: -5px;
   width: 100%;
   height: 3px;
-  background-color: teal;
+  background-color: black;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s;
@@ -319,4 +336,239 @@ main {
 
 .card-action a:hover::before {
   transform: scaleX(1);
+}
+@media screen and (max-width: 1400px) {
+  .small-card-section {
+    gap: 100px 90px;
+  }
+}
+@media screen and (max-width: 1300px) {
+  .small-card-section {
+    gap: 100px 80px;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .introduction-content {
+    margin-bottom: 80px;
+  }
+  .page-title {
+    margin: 80px 0px 10px 0px;
+    font-size: 1.5rem;
+  }
+  .page-subtitle {
+    margin-bottom: 80px;
+    font-size: 0.8rem;
+  }
+  .posts {
+    margin-bottom: 80px;
+  }
+  .view-more {
+    font-size: 0.8rem;
+    margin-bottom: 80px;
+    padding: 10px;
+  }
+  .big-card {
+    margin-bottom: 80px;
+    height: fit-content;
+  }
+  .big-card .image-content {
+    height: auto;
+    width: 50%;
+  }
+  .big-card .background-image {
+    width: 100%;
+  }
+  .big-card .post-content {
+    padding: 10px 20px;
+    height: fit-content;
+  }
+  .big-card .post-content::before {
+    width: 25px;
+  }
+
+  .big-card .card-title {
+    margin: 0px 0px 10px 0px;
+    font-size: 1rem;
+  }
+  .big-card .card-subtitle {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+  }
+  .big-card .card-description {
+    font-size: 0.8rem;
+  }
+  .big-card .card-action {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  .big-card .card-action {
+    font-size: 0.8rem;
+  }
+  .small-card-section {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+  .small-card .post-content {
+    padding: 10px 10px;
+  }
+  .small-card .card-title {
+    margin-bottom: 10px;
+  }
+  .small-card .card-subtitle {
+    margin-bottom: 10px;
+  }
+
+  .small-card .card-description {
+    margin-bottom: 10px;
+  }
+  .small-card .post-content a {
+    font-size: 0.8rem;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+  .publication-details {
+    padding: 10px;
+  }
+  .author {
+    margin-bottom: 10px;
+    font-size: 0.8rem;
+  }
+  .date {
+    font-size: 0.8rem;
+  }
+  .card-action a::before {
+    height: 2px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .introduction-content {
+    margin-bottom: 50px;
+  }
+  .page-title {
+    margin: 50px 0px 10px 0px;
+  }
+  .page-subtitle {
+    margin-bottom: 50px;
+  }
+  .posts {
+    margin-bottom: 50px;
+  }
+  .view-more {
+    margin-bottom: 50px;
+  }
+  .big-card {
+    flex-direction: column;
+    margin-bottom: 50px;
+  }
+  .big-card .image-content {
+    height: 30vh;
+    width: 100%;
+    border-radius: 5px 5px 0px 0px;
+  }
+  .big-card:hover .background-image {
+    width: 100%;
+  }
+  .big-card .post-content::before {
+    width: 0px;
+  }
+  .big-card .post-content {
+    padding: 10px;
+    height: 40vh;
+  }
+  .small-card-section {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .small-card {
+    height: fit-content;
+  }
+
+  .small-card .image-content {
+    height: 30vh;
+  }
+  .small-card:hover .background-image {
+    width: 100%;
+  }
+  .small-card .post-content {
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 600px) {
+  .page-title {
+    margin-bottom: 5px;
+    font-size: 1rem;
+    text-align: center;
+    width: 90%;
+  }
+  .page-subtitle {
+    font-size: 0.6rem;
+    width: 90%;
+    text-align: center;
+  }
+  .posts {
+    width: 90%;
+  }
+  .view-more {
+    font-size: 0.8rem;
+    padding: 5px;
+  }
+  .big-card .image-content {
+    height: 20vh;
+  }
+  .big-card .post-content {
+    padding: 5px 10px;
+  }
+  .big-card .card-title {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+  }
+  .big-card .card-subtitle {
+    font-size: 0.7rem;
+    margin-bottom: 5px;
+  }
+  .big-card .card-description {
+    font-size: 0.6rem;
+  }
+  .big-card .card-action {
+    margin-top: 5px;
+  }
+  .big-card .card-action {
+    font-size: 0.8rem;
+  }
+  .small-card .image-content {
+    height: 20vh;
+  }
+  .small-card .post-content {
+    padding: 5px 10px;
+  }
+  .small-card .card-title {
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+  }
+  .small-card .card-subtitle {
+    margin-bottom: 5px;
+    font-size: 0.7rem;
+  }
+  .small-card .card-description {
+    margin-bottom: 5px;
+    font-size: 0.6rem;
+  }
+  .small-card .post-content a {
+    margin-right: 0px;
+  }
+  .publication-details {
+    padding: 5px;
+  }
+  .author {
+    margin-bottom: 5px;
+    font-size: 0.6rem;
+  }
+  .date {
+    font-size: 0.6rem;
+  }
+}
+@media screen and (max-width: 400px) {
 }

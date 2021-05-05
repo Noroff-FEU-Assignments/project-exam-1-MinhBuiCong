@@ -74,7 +74,6 @@
 .small-subject-container a {
   text-decoration: none;
   color: inherit;
-  font-size: 1rem;
 }
 .small-subject-container span {
   font-size: 1rem;
@@ -99,11 +98,11 @@
 
 .background-image {
   width: 100%;
-  height: 400px;
+  height: 100%;
   position: absolute;
   object-fit: cover;
-  object-position: top;
-  top: -30%;
+  object-position: center;
+  top: 0;
   left: 0;
   z-index: -1;
   transition: transform 4s;
@@ -242,11 +241,9 @@
   .publication-details {
     padding: 10px;
   }
-  .small-subject-container a {
-    font-size: 1rem;
-  }
   .author {
     margin-bottom: 10px;
+    font-size: 1rem;
   }
   .small-subject-container .card {
     margin-bottom: 50px;
@@ -269,6 +266,9 @@
     margin-bottom: 10px;
     font-size: 0.8rem;
   }
+  .card-action a {
+    font-size: 0.8rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
@@ -280,21 +280,25 @@
     height: 20vh;
     border-radius: 5px 5px 0px 0px;
   }
-  .background-image {
-    width: 100%;
-    height: 400px;
-    top: -80%;
-    left: 0;
-  }
   .publication-details {
-    padding: 30px;
+    padding: 10px;
   }
+  .author {
+    font-size: 0.8rem;
+  }
+  .small-subject-container span {
+    font-size: 0.8rem;
+  }
+
   .post-content {
-    padding: 30px 30px;
+    padding: 10px;
     width: 100%;
   }
   .card .post-content::before {
     z-index: -10;
+  }
+  .card-action a::before {
+    height: 2px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -307,7 +311,6 @@
   .big-subject-container p {
     font-size: 0.8rem;
     margin-bottom: 50px;
-
     width: 90%;
   }
   .content-container .subject-title {
@@ -334,9 +337,6 @@
   .publication-details {
     padding: 20px;
   }
-  .small-subject-container a {
-    font-size: 0.8rem;
-  }
   .small-subject-container span {
     font-size: 0.6rem;
   }
@@ -348,7 +348,7 @@
     margin-bottom: 50px;
   }
   .post-content {
-    padding: 20px 20px;
+    padding: 5px 10px;
     /* flex-basis: 50%; */
   }
   .card-title {

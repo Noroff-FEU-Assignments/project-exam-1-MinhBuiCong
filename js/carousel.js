@@ -113,3 +113,11 @@ function updateSlidePosition(slideItems, totalItem) {
     slideItems[i].classList.add("carousel-visible");
   }
 }
+
+// function createCarouselMobile() {
+//   if (window.innerWidth < 800) {
+//     console.log(" small screen:>> ");
+//   }
+// }
+
+// window.onresize = createCarouselMobile;
