@@ -43,7 +43,7 @@
 .big-subject-container a {
   width: 220px;
   height: 50px;
-  font-size: 1rem;
+  font-size: 1.5rem;
   border-radius: 5px;
   color: white;
   background-color: rgb(47, 47, 47);
@@ -140,7 +140,7 @@
 .author {
   display: inline-block;
   margin-bottom: 20px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   transition: all 0.5s 0.3s;
 }
 .author:hover {
@@ -180,18 +180,18 @@
 
 .card-title {
   margin-bottom: 20px;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: black;
 }
 
 .card-subtitle {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: rgb(58, 58, 58);
   margin-bottom: 20px;
 }
 
 .card-description {
-  font-size: 0.8rem;
+  font-size: 1rem;
   color: rgb(44, 44, 44);
   overflow: hidden;
   text-overflow: ellipsis;
@@ -235,7 +235,7 @@
     margin-bottom: 10px;
   }
   .big-subject-container a {
-    font-size: 0.8rem;
+    font-size: 1rem;
     margin-bottom: 80px;
   }
   .content-container .subject-title {
@@ -249,7 +249,7 @@
     padding: 10px;
   }
   .small-subject-container a {
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .author {
     margin-bottom: 10px;
@@ -265,14 +265,15 @@
   }
   .card-title {
     margin-bottom: 10px;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .card-subtitle {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     margin-bottom: 10px;
   }
   .card-description {
     margin-bottom: 10px;
+    font-size: 0.8rem;
   }
 }
 
@@ -310,7 +311,7 @@
     margin-bottom: 5px;
   }
   .big-subject-container a {
-    font-size: 0.7rem;
+    font-size: 0.8rem;
     margin-bottom: 50px;
     height: 30px;
     width: 100px;
@@ -321,6 +322,7 @@
   }
   .content-container .small-subject-container {
     margin-bottom: 0px;
+    width: 90%;
   }
   .image-content {
     width: 100%;
@@ -331,7 +333,7 @@
     padding: 20px;
   }
   .small-subject-container a {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
   .small-subject-container span {
     font-size: 0.6rem;
@@ -348,10 +350,10 @@
   }
   .card-title {
     margin-bottom: 5px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
   .card-subtitle {
-    font-size: 0.6rem;
+    font-size: 0.7rem;
     margin-bottom: 10px;
   }
   .card-description {
@@ -359,6 +361,6 @@
     margin-bottom: 5px;
   }
   .card-action a {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 }
