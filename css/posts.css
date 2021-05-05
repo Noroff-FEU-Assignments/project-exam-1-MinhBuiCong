@@ -28,8 +28,10 @@ main {
 .introduction-layer {
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.109);
-  position: absolute;
+  background-color: rgba(53, 53, 53, 0.705);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .page-title {
   margin: 100px 0px 20px 0px;
