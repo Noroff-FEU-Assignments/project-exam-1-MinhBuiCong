@@ -39,7 +39,8 @@ form {
 .sub-title {
   color: rgba(0, 128, 128, 0.705);
   margin-bottom: 20px;
-  font-size: 1rem;
+  font-size: 1.5rem;
+  width: 80%;
 }
 
 .form-container {
@@ -53,7 +54,7 @@ form {
 
 .form-input {
   color: teal;
-  font-size: 0.8rem;
+  font-size: 1rem;
   text-transform: capitalize;
   display: flex;
   flex-direction: column;
@@ -68,7 +69,7 @@ form {
   padding: 20px 10px;
   margin: 20px 0px;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border: none;
 }
 
@@ -80,7 +81,7 @@ input[type="text"]:focus {
 .form-error {
   display: none;
   color: red;
-  font-size: 0.8rem;
+  font-size: 1rem;
   width: 80%;
 }
 
@@ -90,7 +91,7 @@ input[type="text"]:focus {
   margin: 20px 0px;
   padding: 10px;
   border-radius: 5px;
-  font-size: 0.8rem;
+  font-size: 1rem;
   border: none;
   resize: none;
 }
@@ -113,7 +114,7 @@ input[type="text"]:focus {
   margin-bottom: 50px;
 }
 #submit:hover {
-  background-color: white;
+  background-color: rgb(172, 229, 243);
   color: black;
 }
 
@@ -155,7 +156,7 @@ input[type="text"]:focus {
   align-items: center;
   font-weight: bold;
   color: white;
-  font-size: 0.8rem;
+  font-size: 1rem;
   margin-right: 50px;
 }
 
@@ -179,27 +180,27 @@ input[type="text"]:focus {
   }
   .sub-title {
     margin-bottom: 10px;
-    font-size: 0.8rem;
+    font-size: 1rem;
   }
   .form-input {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     font-weight: normal;
   }
 
   .form-input input {
     padding: 10px 5px;
     margin: 10px 0px;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     height: 40px;
   }
   .form-error {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   #message {
     margin: 10px 0px 20px 0px;
     padding: 5px;
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   #submit {
@@ -209,8 +210,8 @@ input[type="text"]:focus {
     margin-bottom: 50px;
   }
   .opener-title {
-    margin-top: 70px;
-    margin-bottom: 60px;
+    margin-top: 80px;
+    margin-bottom: 65px;
     font-size: 1rem;
   }
   .section {
@@ -222,7 +223,7 @@ input[type="text"]:focus {
     margin: 20px 20px 20px 50px;
   }
   .bold {
-    font-size: 0.6rem;
+    font-size: 0.8rem;
   }
 
   .bold p {
@@ -230,6 +231,15 @@ input[type="text"]:focus {
     margin-left: 10px;
   }
 }
+@media screen and (max-width: 900px) {
+  .section img {
+    margin: 20px 10px 20px 20px;
+  }
+  .bold {
+    margin-right: 20px;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .contact-container {
     flex-direction: column;
@@ -239,6 +249,7 @@ input[type="text"]:focus {
     width: 80%;
     margin-bottom: 50px;
     border-radius: 5px;
+    border-bottom: 10px solid teal;
   }
   .opener-container {
     display: flex;
@@ -252,11 +263,11 @@ input[type="text"]:focus {
     align-items: center;
     border-radius: 5px;
     padding-bottom: 30px;
+    border-top: 10px solid rgb(237, 237, 237);
   }
   .opener-title {
     margin-top: 50px;
     margin-bottom: 50px;
-    font-size: 1rem;
   }
   .section {
     display: flex;
@@ -276,13 +287,16 @@ input[type="text"]:focus {
   }
 }
 @media screen and (max-width: 600px) {
+  form {
+    width: 90%;
+  }
   .title {
     margin-bottom: 5px;
     font-size: 1rem;
   }
   .sub-title {
     margin-bottom: 5px;
-    font-size: 0.7rem;
+    font-size: 0.8rem;
   }
 
   .form-input input {
@@ -303,6 +317,10 @@ input[type="text"]:focus {
     width: 80%;
     font-size: 0.7rem;
     margin-bottom: 50px;
+  }
+  .opener-main {
+    border-top: 10px solid rgb(237, 237, 237);
+    width: 90%;
   }
   .opener-title {
     font-size: 0.8rem;
