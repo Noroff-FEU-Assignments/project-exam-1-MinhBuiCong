@@ -16,15 +16,13 @@ async function getPostId() {
     const postData = await responsePost.json();
     const responseCategories = await fetch(urlCategories);
     const postCategories = await responseCategories.json();
-
     const mappedCategories = createCategoryMap(postCategories);
     var categoryNames = getCategoryNames(mappedCategories, postData.categories);
-    console.log(mappedCategories);
 
     postContainer.innerHTML = `
                         <img id="openModal"src="${
                           postData.featured_media_src_url
-                        }" alt="${postData.slug}"></img>
+                        }" alt="${postData.slug}"/>
                         <div class="text-content">
                         <h1 class="post-title">${
                           postData.title["rendered"]
@@ -34,20 +32,17 @@ async function getPostId() {
                         <span class="published">Published: ${
                           postData.date.split("T")[0]
                         }</span>
-                        <p class="post-description">${
+                        <div class="post-description">${
                           postData.content["rendered"]
-                        }</p>
+                        }</div>
                         <code class="categories">Categories: #${categoryNames.join(
                           ", #"
                         )}</code>
                         </div
                         `;
     imgModal.innerHTML = `<img id="openModal"src="${postData.featured_media_src_url}" alt="${postData.slug}"></img>`;
-
-    console.log("postData :>> ", postData);
-
     document.getElementById("openModal").addEventListener("click", function () {
-      modalContainer.style.display = "block";
+      modalContainer.style.display = "flex";
     });
     span.onclick = function () {
       modal.style.display = "none";

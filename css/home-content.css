@@ -142,7 +142,6 @@
 }
 .date {
   display: block;
-  font-size: 0.8rem;
 }
 .card:hover .author,
 .card:hover .date {
@@ -243,7 +242,10 @@
   }
   .author {
     margin-bottom: 10px;
-    font-size: 1rem;
+    font-size: 0.8rem;
+  }
+  .small-subject-container span {
+    font-size: 0.8rem;
   }
   .small-subject-container .card {
     margin-bottom: 50px;
@@ -335,7 +337,7 @@
     top: -50%;
   }
   .publication-details {
-    padding: 20px;
+    padding: 0px 10px;
   }
   .small-subject-container span {
     font-size: 0.6rem;
