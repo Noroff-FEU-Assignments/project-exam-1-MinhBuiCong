@@ -29,7 +29,6 @@ async function getUrl() {
     createCarousel(posts);
   } catch (error) {
     carouselContainer.innerHTML = `<h2> Something is not right</h2>`;
-    console.log("error :>> ", error);
   }
 }
 
@@ -38,7 +37,6 @@ getUrl();
 function createCarousel(posts) {
   const slides = document.querySelector(".carousel-slide");
   for (var i = 0; i < posts.length; i++) {
-    var dot = document.querySelector(".dot");
     var imgUrl = posts[i].image;
     var itemDiv = `
       
@@ -113,11 +111,3 @@ function updateSlidePosition(slideItems, totalItem) {
     slideItems[i].classList.add("carousel-visible");
   }
 }
-
-// function createCarouselMobile() {
-//   if (window.innerWidth < 800) {
-//     console.log(" small screen:>> ");
-//   }
-// }
-
-// window.onresize = createCarouselMobile;

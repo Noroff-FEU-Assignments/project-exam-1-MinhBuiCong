@@ -48,8 +48,7 @@ function validateForm() {
     form = false;
   }
   if (form === true) {
-    formFeedback.innerHTML = `<h1>your message has been sent!</h1>`;
-    console.log(" hallo:>> ");
+    formFeedback.innerHTML = `<h1 class="title submitted">your message has been sent!</h1>`;
   }
 }
 

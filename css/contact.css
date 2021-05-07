@@ -43,6 +43,10 @@ form {
   font-size: 2rem;
 }
 
+.title.submitted {
+  margin-bottom: 50px;
+}
+
 .sub-title {
   color: rgb(83, 83, 83);
   margin-bottom: 20px;
@@ -186,6 +190,7 @@ input[type="text"]:focus {
     margin-bottom: 10px;
     font-size: 1.5rem;
   }
+
   .sub-title {
     margin-bottom: 10px;
     font-size: 1rem;
@@ -258,7 +263,6 @@ input[type="text"]:focus {
     width: 80%;
     margin-bottom: 50px;
     border-radius: 5px;
-    border-bottom: 10px solid teal;
   }
   .opener-container {
     display: flex;
@@ -306,6 +310,7 @@ input[type="text"]:focus {
   .sub-title {
     margin-bottom: 5px;
     font-size: 0.8rem;
+    font-weight: 300;
   }
   .form-input {
     font-size: 0.6rem;
@@ -354,5 +359,11 @@ input[type="text"]:focus {
 
   .bold p {
     margin-left: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .sub-title {
+    font-size: 0.7rem;
   }
 }
