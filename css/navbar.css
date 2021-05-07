@@ -11,7 +11,7 @@
   justify-content: space-between;
   align-items: center;
   height: fit-content;
-  width: 80vw;
+  width: 80%;
   margin: auto;
 }
 
@@ -38,8 +38,8 @@
 }
 
 .nav-logo {
-  width: 6vw;
-  margin: 20px;
+  width: 100px;
+  margin: 10px;
 }
 
 .nav-link-container {
@@ -54,11 +54,11 @@
   color: black;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
-  letter-spacing: 0.3rem;
 }
 
 .nav-link-container a:hover {
-  color: rgb(58, 58, 58);
+  text-decoration: underline;
+  color: rgb(107, 105, 105);
 }
 
 .social-media-container {
@@ -69,115 +69,128 @@
   align-items: center;
 }
 
+.social-media-container a:hover img {
+  filter: invert(50%);
+}
+
 .social-media-container img {
   width: 30px;
   height: 30px;
 }
-
-.nav-mobile-menu {
+.nav-mobile {
+  overflow: hidden;
+  background-color: white;
+  position: relative;
   display: none;
-  position: absolute;
-  float: left;
-  right: 10%;
-  padding: 5px 10px;
-  border-radius: 5px;
-  background-color: rgb(246, 246, 246);
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
-}
-
-.nav-mobile-menu .menu-button {
-  font-size: 0.8rem;
-  border: none;
-  outline: none;
-  color: rgb(75, 75, 75);
-  background-color: inherit;
-}
-
-.nav-mobile-menu:hover .menu-button {
-  color: rgb(0, 0, 0);
-}
-
-.dropdown-content {
-  display: none;
-  float: right;
-  position: absolute;
-  background-color: rgb(246, 246, 246);
-  border-radius: 5px;
-  height: 26vh;
-  width: 15vw;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
-  z-index: 1;
-  margin-top: 5px;
-}
-
-.dropdown-content a {
-  display: flex;
-  margin: 30px 10px;
   flex-direction: column;
-  color: rgb(82, 82, 82);
+}
+.nav-mobile a {
+  color: black;
   text-decoration: none;
-  text-align: center;
+}
+.active {
+  color: black;
+  margin: 20px;
+  padding-left: 10px;
+  font-size: 1rem;
+}
+.nav-mobile #menu-button {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 2%;
+  padding: 20px 20px 0px 0px;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  margin: 2px;
+  background-color: black;
+}
+
+#mobile-link {
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  position: fixed;
+  top: 0%;
+  right: 0;
+  transform: translate3d(100vw, 0, 0);
+  transition: transform 0.3s cubic-bezier(0, 0.52, 0, 1);
+  overflow: scroll;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+}
+
+#mobile-link a {
+  color: #333;
+  margin-bottom: 20px;
+  text-decoration: none;
   font-size: 0.8rem;
 }
 
-.dropdown-content a:hover {
-  color: rgb(0, 0, 0);
+#mobile-link img {
+  width: 150px;
+  height: auto;
 }
 
-.nav-mobile-menu:hover .dropdown-content {
-  display: block;
+#mobile-link span {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 20px 20px 0px 0px;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+#mobile-link a:hover {
+  text-decoration: underline;
+}
+
+#mobile-link.show {
+  transform: translate3d(0vw, 0, 0);
 }
 
 @media screen and (max-width: 1200px) {
-  body {
-    overflow-x: hidden;
-  }
   .nav-link-container a {
     font-size: 0.8rem;
-    letter-spacing: 0.1rem;
-  }
-  .nav-logo {
-    width: 8vw;
   }
 }
 
 @media screen and (max-width: 800px) {
-  body {
-    overflow-x: inherit;
+  .nav-container {
+    display: none;
   }
-  .section-1 {
+  .nav-mobile {
+    display: flex;
+    justify-content: center;
     align-items: center;
   }
-  .nav-logo {
-    width: 13vw;
-  }
-  .section-2 {
-    display: none;
-  }
-  .section-3 {
-    display: none;
-  }
-  .nav-mobile-menu {
-    display: block;
-  }
 }
-
 @media screen and (max-width: 600px) {
-  .nav-logo {
-    width: 15vw;
+  .active {
+    margin: 10px;
+    padding-left: 10px;
+    font-size: 0.8rem;
   }
-  .dropdown-content a {
-    font-size: 0.6rem;
+  .nav-mobile #menu-button {
+    top: 10%;
+    padding: 10px 10px 0px 0px;
   }
-  .nav-mobile-menu .menu-button {
-    font-size: 0.6rem;
+  .line {
+    width: 20px;
+    height: 2px;
+    margin: 1px;
+    background-color: black;
   }
 }
 @media screen and (max-width: 400px) {
-  .nav-logo {
-    width: 22vw;
-  }
-  .dropdown-content {
-    width: 20vw;
+  #mobile-link span {
+    font-size: 1rem;
   }
 }

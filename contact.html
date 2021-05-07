@@ -32,7 +32,8 @@
     <title>contact techblog</title>
   </head>
   <body>
-    <nav class="nav-container">
+    <nav">
+      <div class="nav-container">
       <div class="nav-section section-1">
         <a class="nav-home" href="./index.html">
           <img
@@ -73,21 +74,32 @@
           /></a>
         </div>
       </div>
-      <div class="nav-mobile-menu">
-        <button class="menu-button">
-          menu
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <a href="index.html">home</a>
-          <a href="about.html">about</a>
-          <a href="contact.html">contact</a>
-          <a href="blog-page.html">posts</a>
-        </div>
-      </div>
+    </div>
+      <div class="nav-mobile">
+        <a href="index.html" class="active">Techblog
+        </a>
+      <a id="menu-button">
+        <div class="line line-1"></div>
+          <div class="line line-2"></div>
+          <div class="line line-3"></div>
+      </a>
+      <div id="mobile-link">
+        <a href="index.html">
+          <img
+          class="nav-logo"
+          src="./assets/techblog-logo/no-bg-logo.png"
+          alt="logo"
+        />
+        </a>
+        <a href="index.html">home</a>
+        <a href="about.html">about</a>
+        <a href="contact.html">contact</a>
+        <a href="blog-page.html">posts</a>
+        <span>&times;</span>
+    </div>
+  </div>
     </nav>
     <main>
-      <!-- <div class="background-image"></div> -->
       <div class="contact-container">
         <div class="form-content">
           <form id="form-feedback">
@@ -246,6 +258,6 @@
       </div>
     </footer>
     <script src="js/contact.js"></script>
-    <!-- <script src="js/navbar.js"></script> -->
+    <script src="js/navbar.js"></script>
   </body>
 </html>
