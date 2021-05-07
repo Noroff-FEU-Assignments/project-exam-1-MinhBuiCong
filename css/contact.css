@@ -32,12 +32,12 @@ form {
   width: 40vw;
   height: 100%;
   border-radius: 5px 0px 0px 5px;
-  border-top: 10px solid rgb(98, 98, 98);
-  background-color: rgb(237, 237, 237);
+  border-top: 10px solid #ecad24;
+  background-color: rgb(241, 241, 241);
 }
 
 .title {
-  color: black;
+  color: #1d2934;
   margin-top: 50px;
   margin-bottom: 20px;
   font-size: 2rem;
@@ -64,7 +64,7 @@ form {
 }
 
 .form-input {
-  color: black;
+  color: #1d2934;
   font-size: 1rem;
   text-transform: capitalize;
   display: flex;
@@ -85,13 +85,13 @@ form {
 }
 
 input[type="text"]:focus {
-  outline: 2px solid lightblue;
+  outline: 2px solid #ecad24;
   border-radius: 5px;
 }
 
 .form-error {
   display: none;
-  color: red;
+  color: #dd493a;
   font-size: 1rem;
   width: 80%;
   margin-bottom: 20px;
@@ -109,7 +109,7 @@ input[type="text"]:focus {
 }
 
 #message:focus {
-  outline: 2px solid lightblue;
+  outline: 2px solid #ecad24;
 }
 
 #submit {
@@ -118,7 +118,7 @@ input[type="text"]:focus {
   font-size: 1rem;
   text-transform: uppercase;
   color: white;
-  background-color: rgb(48, 99, 112);
+  background-color: #ecad24;
   border: none;
   border-radius: 5px;
   text-align: center;
@@ -126,8 +126,7 @@ input[type="text"]:focus {
   margin-bottom: 50px;
 }
 #submit:hover {
-  background-color: lightblue;
-  color: black;
+  background-color: #18b6fb;
 }
 
 /* right-section */
@@ -135,10 +134,10 @@ input[type="text"]:focus {
 .opener-main {
   display: flex;
   flex-direction: column;
-  background: rgb(98, 98, 98);
+  background: #ecad24;
   height: 100%;
   width: fit-content;
-  border-bottom: 10px solid rgb(237, 237, 237);
+  border-bottom: 10px solid rgb(241, 241, 241);
   border-radius: 0px 5px 5px 0px;
 }
 
@@ -263,6 +262,7 @@ input[type="text"]:focus {
     width: 80%;
     margin-bottom: 50px;
     border-radius: 5px;
+    border-bottom: 10px solid #ecad24;
   }
   .opener-container {
     display: flex;
@@ -276,7 +276,7 @@ input[type="text"]:focus {
     align-items: center;
     border-radius: 5px;
     padding-bottom: 30px;
-    border-top: 10px solid rgb(237, 237, 237);
+    border-top: 10px solid rgb(241, 241, 241);
   }
   .opener-title {
     margin-top: 50px;

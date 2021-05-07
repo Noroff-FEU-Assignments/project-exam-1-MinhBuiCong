@@ -7,6 +7,7 @@ const urlCategories =
 const postContainer = document.querySelector(".post-container");
 const modalContainer = document.querySelector(".modal-container");
 const imgModal = document.querySelector(".img-modal");
+const titleWeb = document.querySelector("title");
 var modal = document.getElementById("modal");
 var span = document.getElementsByClassName("close")[0];
 
@@ -19,6 +20,7 @@ async function getPostId() {
     const mappedCategories = createCategoryMap(postCategories);
     var categoryNames = getCategoryNames(mappedCategories, postData.categories);
 
+    titleWeb.innerHTML = `${postData.title["rendered"]}`;
     postContainer.innerHTML = `
                         <img id="openModal"src="${
                           postData.featured_media_src_url

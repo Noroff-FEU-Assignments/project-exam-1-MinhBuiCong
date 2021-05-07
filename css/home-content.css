@@ -59,7 +59,7 @@
 /*topic title*/
 
 .content-container .subject-title {
-  color: black;
+  color: #1d2934;
   font-size: 1.5rem;
   margin: 100px 0px 50px 0px;
 }
@@ -173,7 +173,7 @@
 .card-title {
   margin-bottom: 20px;
   font-size: 1.3rem;
-  color: black;
+  color: #1d2934;
 }
 
 .card-subtitle {
@@ -197,8 +197,12 @@
   text-align: right;
 }
 .card-action a {
-  color: black;
+  color: #ecad24;
   position: relative;
+}
+
+.card-action a:hover {
+  color: #18b6fb;
 }
 
 .card-action a::before {
@@ -208,7 +212,7 @@
   bottom: -5px;
   width: 100%;
   height: 3px;
-  background-color: black;
+  background-color: #ecad24;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.4s;
@@ -216,6 +220,7 @@
 
 .card-action a:hover::before {
   transform: scaleX(1);
+  background-color: #18b6fb;
 }
 
 @media screen and (max-width: 1200px) {
@@ -300,6 +305,7 @@
     z-index: -10;
   }
   .card-action a::before {
+    margin-bottom: 5px;
     height: 2px;
   }
 }

@@ -12,7 +12,7 @@
 }
 
 .carousel .carousel-title {
-  color: black;
+  color: #1d2934;
   font-size: 1.5rem;
   margin: 100px 0px 50px 0px;
 }
@@ -34,7 +34,7 @@
 }
 
 .carousel-item:hover {
-  transform: scale3d(1.1, 1.1, 1);
+  transform: scale3d(1.05, 1.05, 1.05);
 }
 
 .carousel-image {
@@ -51,7 +51,7 @@
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
-  -webkit-line-clamp: 2;
+  -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   top: 77.5%;
   left: 0;
@@ -59,6 +59,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.233), rgb(3, 3, 3));
   border-radius: 0px 0px 5px 5px;
   padding: 0px 5px;
+
   height: fit-content;
 }
 
@@ -107,7 +108,7 @@
   cursor: pointer;
   width: 250px;
   height: 30px;
-  background-color: black;
+  background-color: #ecad24;
   color: white;
   transition: all 0.1s ease-in-out;
   box-shadow: 0 1px 3px 0 rgb(0 0 0 / 10%), 0 4px 8px 3px rgb(0 0 0 / 5%);
@@ -117,7 +118,7 @@
 }
 
 .carousel .carousel-actions button:hover {
-  background-color: rgb(80, 80, 80);
+  background-color: #18b6fb;
 }
 
 .carousel .carousel-actions button#carousel-button-prev {
@@ -219,7 +220,10 @@
     width: 50px;
     height: 100%;
     margin-bottom: 0px;
-    background-color: black;
+    background-color: #ecad24;
+  }
+  .carousel .carousel-actions button:hover {
+    background-color: #ecad24;
   }
 }
 @media screen and (max-width: 600px) {

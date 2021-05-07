@@ -7,7 +7,7 @@ main {
   justify-content: center;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(238, 238, 238);
+  background-color: rgb(255, 255, 255);
 }
 
 /* image content top */
@@ -63,7 +63,7 @@ main {
   margin-bottom: 100px;
   padding: 10px;
   color: white;
-  background-color: black;
+  background-color: #ecad24;
   border-radius: 5px;
   border: none;
   cursor: pointer;
@@ -72,7 +72,7 @@ main {
 }
 
 .view-more:hover {
-  background-color: rgb(5, 197, 197);
+  background-color: #18b6fb;
   border: 1px solid rgba(255, 255, 255, 0.22);
 }
 
@@ -127,12 +127,12 @@ main {
 .big-card .card-title {
   margin: 20px 0px 20px 0px;
   font-size: 1.5rem;
-  color: black;
+  color: #1d2934;
 }
 
 .big-card .card-subtitle {
   font-size: 1.3rem;
-  color: black;
+  color: #1d2934;
   margin-bottom: 20px;
 }
 
@@ -152,7 +152,7 @@ main {
 }
 
 .big-card .card-action a {
-  color: black;
+  color: #ecad24;
   text-decoration: none;
 }
 
@@ -204,7 +204,7 @@ main {
   margin-bottom: 20px;
   padding: 2px;
   font-size: 1rem;
-  color: black;
+  color: #1d2934;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -216,7 +216,7 @@ main {
   font-size: 0.9rem;
   font-weight: 400;
   text-transform: capitalize;
-  color: black;
+  color: #1d2934;
   margin-bottom: 20px;
 }
 
@@ -241,7 +241,7 @@ main {
   margin-right: 10px;
   margin-bottom: 20px;
   text-decoration: none;
-  color: black;
+  color: #ecad24;
 }
 
 .hidden {
@@ -323,6 +323,10 @@ main {
   position: relative;
 }
 
+.card-action a:hover {
+  color: #18b6fb;
+}
+
 .card-action a::before {
   content: "";
   position: absolute;
@@ -330,7 +334,7 @@ main {
   bottom: -5px;
   width: 100%;
   height: 3px;
-  background-color: black;
+  background-color: #ecad24;
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.5s;
@@ -338,6 +342,7 @@ main {
 
 .card-action a:hover::before {
   transform: scaleX(1);
+  background-color: #18b6fb;
 }
 @media screen and (max-width: 1400px) {
   .small-card-section {

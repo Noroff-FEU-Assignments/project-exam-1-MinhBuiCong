@@ -1,3 +1,11 @@
+/* 
+#18B6FB - blue
+#ECAD24 - yellow
+#DD493A - red
+#1D2934 - black
+#FFFFFF - white 
+*/
+
 .post-content {
   width: 100vw;
   height: fit-content;
@@ -38,7 +46,7 @@
 }
 
 .post-title {
-  color: black;
+  color: #1d2934;
   font-size: 2rem;
   margin: 100px 0px 20px 0px;
   width: 80%;
@@ -53,7 +61,7 @@
 }
 
 span {
-  color: rgb(0, 0, 0);
+  color: #1d2934;
   text-align: center;
   margin-bottom: 20px;
   font-size: 1rem;
@@ -62,7 +70,7 @@ span {
 .post-description p {
   margin: 80px auto 20px auto;
   width: 80%;
-  color: rgb(41, 40, 40);
+  color: #1d2934;
   font-size: 1rem;
 }
 
@@ -70,7 +78,7 @@ span {
   margin-top: 80px;
   margin-bottom: 100px;
   width: 80%;
-  color: rgb(255, 181, 44);
+  color: #dd493a;
   font-size: 1rem;
 }
 
@@ -108,7 +116,7 @@ span {
 }
 
 .close:hover {
-  color: red;
+  color: #dd493a;
 }
 
 #openModal {
