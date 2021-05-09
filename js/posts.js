@@ -43,8 +43,8 @@ function createPosts(data) {
                     <div class="image-content">
                     <img class="background-image"src="${data[i].image}" alt="${data[i].slug}" ></img>
                     <div class="publication-details">
-                    <a href="../blog-detail.html?id=${data[i].link}" class="author">Minh Cong Bui</a>
-                    <span class="date">${data[i].date}</span>
+                    <a href="../blog-detail.html?id=${data[i].link}" class="author">Author: Minh Cong Bui</a>
+                    <span class="date">Published: ${data[i].date}</span>
                     </div>
                     </div>
                     <div class="post-content">

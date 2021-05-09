@@ -28,6 +28,10 @@
   justify-content: center;
 }
 
+.section-1 a {
+  width: fit-content;
+}
+
 .section-2 {
   flex: 2;
   justify-content: center;

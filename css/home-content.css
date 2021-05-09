@@ -74,6 +74,7 @@
 .small-subject-container a {
   text-decoration: none;
   color: inherit;
+  text-shadow: black 0px 0px 0.5px;
 }
 .small-subject-container span {
   font-size: 1rem;
@@ -108,7 +109,7 @@
   transition: transform 4s;
 }
 .small-subject-container .card:hover .background-image {
-  transform: scale(1.2);
+  transform: scale(1.1);
   border-radius: 5px 0px 0px 5px;
 }
 .publication-details {
@@ -116,8 +117,8 @@
   height: 100%;
   background: linear-gradient(
     to right bottom,
-    rgba(115, 151, 185, 0.466),
-    rgba(110, 164, 195, 0.52)
+    rgba(115, 151, 185, 0.157),
+    rgba(110, 164, 195, 0.26)
   );
   color: white;
   position: absolute;
@@ -135,6 +136,7 @@
   margin-bottom: 20px;
   font-size: 1rem;
   transition: all 0.5s 0.3s;
+  text-shadow: black 0px 0px 3px;
 }
 .author:hover {
   color: white;
@@ -142,6 +144,7 @@
 }
 .date {
   display: block;
+  text-shadow: black 0px 0px 3px;
 }
 .card:hover .author,
 .card:hover .date {
@@ -337,11 +340,6 @@
     height: 20vh;
     border-radius: 5px 5px 0px 0px;
   }
-  .background-image {
-    width: 100%;
-    height: auto;
-    top: -50%;
-  }
   .publication-details {
     padding: 0px 10px;
   }
@@ -357,7 +355,6 @@
   }
   .post-content {
     padding: 5px 10px;
-    /* flex-basis: 50%; */
   }
   .card-title {
     margin-bottom: 5px;
@@ -373,13 +370,5 @@
   }
   .card-action a {
     font-size: 0.8rem;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  .background-image {
-    width: 100%;
-    height: auto;
-    top: -15%;
   }
 }

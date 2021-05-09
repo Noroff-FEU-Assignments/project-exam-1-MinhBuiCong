@@ -4,7 +4,6 @@ const prevButton = document.querySelector("#carousel-button-prev");
 const nextButton = document.querySelector("#carousel-button-next");
 let slidePosition = 0;
 let pageItem = 4;
-
 let posts;
 
 document.getElementById("carousel-button-prev").style.opacity = 0.2;

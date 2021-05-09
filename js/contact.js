@@ -1,5 +1,5 @@
+const contactContainer = document.querySelector(".contact-container");
 const form = document.querySelector("form");
-const formFeedback = document.querySelector("#form-feedback");
 const fullNameError = document.querySelector("#name-error");
 const fullName = document.querySelector("#name");
 const emailError = document.querySelector("#email-error");
@@ -48,7 +48,7 @@ function validateForm() {
     form = false;
   }
   if (form === true) {
-    formFeedback.innerHTML = `<h1 class="title submitted">your message has been sent!</h1>`;
+    contactContainer.innerHTML = `<h1 class="title submitted">your message has been sent!</h1>`;
   }
 }
 
