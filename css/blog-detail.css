@@ -121,7 +121,20 @@ span {
 
 #openModal {
   width: 100%;
-  border-radius: 5px;
+}
+
+.back {
+  position: absolute;
+  top: 47.5%;
+  left: 10%;
+  background-color: white;
+  color: #ecad24;
+  border: none;
+  font-size: 1rem;
+}
+
+.back:hover {
+  color: #18b6fb;
 }
 
 @media screen and (max-width: 1200px) {
@@ -160,6 +173,9 @@ span {
   .close {
     font-size: 1.5rem;
   }
+  .back {
+    top: 46.5%;
+  }
 }
 @media screen and (max-width: 800px) {
   .post-container img {
@@ -179,6 +195,11 @@ span {
   .categories {
     margin-top: 40px;
     margin-bottom: 50px;
+  }
+  .back {
+    top: 28.5%;
+    left: 5%;
+    font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 600px) {
@@ -203,6 +224,10 @@ span {
   }
   .close {
     font-size: 1rem;
+  }
+  .back {
+    top: 26.5%;
+    font-size: 0.6rem;
   }
 }
 

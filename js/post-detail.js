@@ -40,7 +40,8 @@ async function getPostId() {
                         <code class="categories">Categories: #${categoryNames.join(
                           ", #"
                         )}</code>
-                        </div
+                        </div>
+                        <button class="back" onclick="backButton()">&larr; Back</button
                         `;
     imgModal.innerHTML = `<img id="openModal"src="${postData.featured_media_src_url}" alt="${postData.slug}"></img>`;
     document.getElementById("openModal").addEventListener("click", function () {
@@ -74,4 +75,8 @@ function createCategoryMap(postCategories) {
   var categoriesMap = {};
   postCategories.map((c) => (categoriesMap[c.id] = c));
   return categoriesMap;
+}
+
+function backButton() {
+  window.history.back();
 }
