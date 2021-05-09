@@ -59,8 +59,7 @@
   background-image: linear-gradient(rgba(0, 0, 0, 0.233), rgb(3, 3, 3));
   border-radius: 0px 0px 5px 5px;
   padding: 0px 5px;
-
-  height: fit-content;
+  height: 50px;
 }
 
 .carousel-item:hover img {
@@ -128,6 +127,14 @@
   margin-left: 25px;
 }
 
+.carousel-mobile {
+  display: none;
+}
+
+.carousel-slide-mobile {
+  display: none;
+}
+
 @media screen and (max-width: 1200px) {
   .carousel {
     margin-bottom: 80px;
@@ -185,21 +192,22 @@
     margin-top: 50px;
   }
   .carousel-slide {
-    flex-direction: column;
-    margin-bottom: 0px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
   }
   .carousel-item {
-    margin: 0px 0px 50px 0px;
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     z-index: 1;
+    margin: 0px;
   }
   .carousel-image {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
   .carousel-item p {
-    width: 300px;
+    width: 200px;
     height: fit-content;
     -webkit-line-clamp: 2;
   }
@@ -207,23 +215,18 @@
     font-size: 0.8rem;
     height: fit-content;
     -webkit-line-clamp: 2;
-    width: 300px;
+    width: 200px;
   }
-  .carousel .carousel-actions {
-    justify-content: space-between;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
+  .carousel .carousel-actions button#carousel-button-prev {
+    margin-right: 25px;
+  }
+  .carousel .carousel-actions button#carousel-button-next {
+    margin-left: 25px;
   }
   .carousel .carousel-actions button {
-    width: 50px;
-    height: 100%;
-    margin-bottom: 0px;
-    background-color: #ecad24;
-  }
-  .carousel .carousel-actions button:hover {
-    background-color: #ecad24;
+    width: 200px;
+    height: 30px;
+    margin-bottom: 50px;
   }
 }
 @media screen and (max-width: 600px) {
@@ -235,74 +238,51 @@
     margin-top: 50px;
     font-size: 1rem;
   }
+
   .carousel-item {
-    margin: 0px 0px 50px 0px;
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
     z-index: 1;
   }
   .carousel-image {
-    width: 250px;
-    height: 250px;
+    width: 150px;
+    height: 150px;
   }
   .carousel-item:hover p {
     font-size: 0.6rem;
     height: fit-content;
-    width: 250px;
+    width: 150px;
   }
   .carousel-item p {
     font-size: 0.6rem;
     margin-top: 0px;
-    width: 250px;
+    width: 150px;
   }
   .carousel .carousel-actions button {
-    width: fit-content;
-    padding: 0px 20px;
     font-size: 0.8rem;
+    width: 150px;
   }
 }
 
 @media screen and (max-width: 400px) {
-  .carousel-item {
-    margin: 0px 0px 50px 0px;
-    width: 200px;
-    height: 200px;
-    z-index: 1;
-  }
-  .carousel-image {
-    width: 200px;
-    height: 200px;
-  }
-  .carousel-item:hover p {
-    width: 200px;
-  }
-  .carousel-item p {
-    font-size: 0.6rem;
-    margin-top: 0px;
-    width: 200px;
-  }
-  .carousel .carousel-actions button {
-    padding: 0px 10px;
-    margin: 0px;
-    width: fit-content;
+  .carousel-slide {
+    gap: 30px;
   }
   .carousel .carousel-actions button#carousel-button-prev {
-    margin-right: 0px;
+    margin-right: 15px;
   }
   .carousel .carousel-actions button#carousel-button-next {
-    margin-left: 0px;
+    margin-left: 15px;
   }
 }
 @media screen and (max-width: 350px) {
-  .carousel-item {
-    width: 150px;
-    height: 150px;
+  .carousel-slide {
+    gap: 20px;
   }
-  .carousel-image {
-    width: 150px;
-    height: 150px;
+  .carousel .carousel-actions button#carousel-button-prev {
+    margin-right: 10px;
   }
-  .carousel-item p {
-    width: 150px;
+  .carousel .carousel-actions button#carousel-button-next {
+    margin-left: 10px;
   }
 }

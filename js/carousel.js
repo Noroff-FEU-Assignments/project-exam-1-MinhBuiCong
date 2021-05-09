@@ -3,7 +3,7 @@ const carouselContainer = document.querySelector(".carousel");
 const prevButton = document.querySelector("#carousel-button-prev");
 const nextButton = document.querySelector("#carousel-button-next");
 let slidePosition = 0;
-const pageItem = 4;
+let pageItem = 4;
 
 let posts;
 
@@ -39,7 +39,6 @@ function createCarousel(posts) {
   for (var i = 0; i < posts.length; i++) {
     var imgUrl = posts[i].image;
     var itemDiv = `
-      
       <div class="carousel-item" id="${posts[i].id}" >
       <a class="post-link" href="../blog-detail.html?id=${posts[i].link}">
       <img class="carousel-image"src="${imgUrl}" alt="${posts[i].slug}" />
@@ -47,11 +46,11 @@ function createCarousel(posts) {
       <p>${posts[i].title["rendered"]}</p>
       </div>
       `;
+
     slides.innerHTML += itemDiv;
   }
   var slideItems = document.querySelectorAll(".carousel-item");
   var totalItem = slideItems.length;
-
   for (var i = 0; i < pageItem; i++) {
     slideItems[i].classList.add("carousel-visible");
   }
