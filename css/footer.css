@@ -32,6 +32,7 @@ footer {
   background-color: #ecad24;
   transition: all 0.2s ease-in-out;
   font-size: 1rem;
+  color: black;
 }
 .column-main a:hover {
   background-color: #18b6fb;

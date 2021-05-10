@@ -117,7 +117,7 @@ input[type="text"]:focus {
   width: 80%;
   font-size: 1rem;
   text-transform: uppercase;
-  color: white;
+  color: #1d2934;
   background-color: #ecad24;
   border: none;
   border-radius: 5px;
@@ -144,7 +144,7 @@ input[type="text"]:focus {
 .opener-title {
   margin-top: 70px;
   margin-bottom: 100px;
-  color: white;
+  color: #1d2934;
   font-size: 1.5rem;
 }
 
@@ -159,14 +159,13 @@ input[type="text"]:focus {
   width: 50px;
   height: 50px;
   margin: 20px 20px 20px 50px;
-  filter: invert(100%);
 }
 
 .bold {
   display: flex;
   align-items: center;
   font-weight: bold;
-  color: white;
+  color: #1d2934;
   font-size: 1rem;
   margin-right: 50px;
 }
