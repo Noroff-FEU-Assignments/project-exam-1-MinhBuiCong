@@ -27,7 +27,7 @@
 .post-container img {
   width: 100%;
   height: 30vh;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   cursor: pointer;
   object-fit: cover;
   object-position: center;
@@ -124,13 +124,14 @@ span {
 }
 
 .back {
-  position: absolute;
-  top: 47.5%;
-  left: 10%;
   background-color: white;
   color: #ecad24;
   border: none;
   font-size: 1rem;
+  cursor: pointer;
+  width: 80%;
+  text-align: left;
+  margin-bottom: 50px;
 }
 
 .back:hover {
@@ -139,7 +140,7 @@ span {
 
 @media screen and (max-width: 1200px) {
   .post-container img {
-    margin-bottom: 80px;
+    margin-bottom: 40px;
   }
   .text-content {
     margin-bottom: 80px;
@@ -174,12 +175,12 @@ span {
     font-size: 1.5rem;
   }
   .back {
-    top: 46.5%;
+    margin-bottom: 40px;
   }
 }
 @media screen and (max-width: 800px) {
   .post-container img {
-    margin-bottom: 50px;
+    margin-bottom: 25px;
     height: 20vh;
   }
   .text-content {
@@ -197,8 +198,8 @@ span {
     margin-bottom: 50px;
   }
   .back {
-    top: 28.5%;
-    left: 5%;
+    margin-bottom: 25px;
+    width: 90%;
     font-size: 0.8rem;
   }
 }
@@ -226,7 +227,6 @@ span {
     font-size: 1rem;
   }
   .back {
-    top: 26.5%;
     font-size: 0.6rem;
   }
 }
@@ -240,5 +240,8 @@ span {
   }
   .modal-content {
     width: 90%;
+  }
+  .back {
+    width: 100%;
   }
 }

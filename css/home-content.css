@@ -38,7 +38,7 @@
   color: white;
   font-size: 2rem;
   margin: 100px 0px 20px 0px;
-  text-shadow: black 0px 0px 3px;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
 }
 
 .big-subject-container p {
@@ -49,7 +49,7 @@
   color: white;
   text-align: center;
   margin-bottom: 100px;
-  text-shadow: black 0px 0px 3px;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
 }
 
 .big-subject-container a:hover {
@@ -61,7 +61,7 @@
 .content-container .subject-title {
   color: #1d2934;
   font-size: 1.5rem;
-  margin: 100px 0px 50px 0px;
+  margin: 100px 0px;
 }
 /*main small card */
 .content-container .small-subject-container {
@@ -74,7 +74,7 @@
 .small-subject-container a {
   text-decoration: none;
   color: inherit;
-  text-shadow: black 0px 0px 0.5px;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
 }
 .small-subject-container span {
   font-size: 1rem;
@@ -126,7 +126,7 @@
   left: 0;
   padding: 20px;
   transform: translateX(-100%);
-  transition: transform 0.8s;
+  transition: transform 1.5s;
 }
 .card:hover .publication-details {
   transform: translateX(0);
@@ -144,7 +144,7 @@
 }
 .date {
   display: block;
-  text-shadow: black 0px 0px 3px;
+  text-shadow: rgba(0, 0, 0, 0.37) 0px 0px 1px;
 }
 .card:hover .author,
 .card:hover .date {
@@ -235,12 +235,12 @@
     margin-bottom: 10px;
   }
   .big-subject-container p {
-    font-size: 1rem;
+    font-size: 0.8rem;
     margin-bottom: 80px;
   }
   .content-container .subject-title {
     font-size: 1rem;
-    margin: 80px 0px 50px 0px;
+    margin: 80px 0px;
   }
   .content-container .small-subject-container {
     margin-bottom: 30px;
@@ -282,6 +282,16 @@
 }
 
 @media screen and (max-width: 800px) {
+  .big-subject-container .big-title {
+    margin-top: 50px;
+  }
+  .big-subject-container p {
+    margin-bottom: 50px;
+  }
+  .content-container .subject-title {
+    font-size: 1rem;
+    margin: 50px 0px;
+  }
   .small-subject-container .card {
     flex-direction: column;
   }
@@ -316,17 +326,11 @@
   .big-subject-container .big-title {
     width: 90%;
     font-size: 1rem;
-    margin-top: 50px;
     margin-bottom: 5px;
   }
   .big-subject-container p {
-    font-size: 0.8rem;
-    margin-bottom: 50px;
+    font-size: 0.6rem;
     width: 90%;
-  }
-  .content-container .subject-title {
-    font-size: 1rem;
-    margin: 50px 0px 50px 0px;
   }
   .content-container .small-subject-container {
     margin-bottom: 0px;

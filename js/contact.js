@@ -1,5 +1,6 @@
 const contactContainer = document.querySelector(".contact-container");
 const form = document.querySelector("form");
+const formError = document.querySelector(".form-error");
 const fullNameError = document.querySelector("#name-error");
 const fullName = document.querySelector("#name");
 const emailError = document.querySelector("#email-error");

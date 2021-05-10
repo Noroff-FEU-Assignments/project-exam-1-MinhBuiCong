@@ -6,6 +6,10 @@
   text-transform: capitalize;
 }
 
+nav {
+  width: 100vw;
+}
+
 .nav-container {
   display: flex;
   justify-content: space-between;
@@ -58,6 +62,7 @@
   color: #1d2934;
   font-size: 1rem;
   transition: all 0.2s ease-in-out;
+  padding: 20px;
 }
 
 .nav-link-container a:hover {
@@ -71,6 +76,10 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.social-media-container a {
+  padding: 20px;
 }
 
 .social-media-container a:hover img {
@@ -95,7 +104,6 @@
 .active {
   color: #1d2934;
   margin: 20px;
-  padding-left: 10px;
   font-size: 1rem;
 }
 .nav-mobile #menu-button {
@@ -188,7 +196,6 @@
 @media screen and (max-width: 600px) {
   .active {
     margin: 10px;
-    padding-left: 10px;
     font-size: 0.8rem;
   }
   .nav-mobile #menu-button {

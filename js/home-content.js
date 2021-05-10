@@ -47,8 +47,8 @@ function createContent(data) {
                     </div>
                     </div>
                     <div class="post-content">
-                    <h2 class="card-title">${data[i].title["rendered"]}</h2>
-                    <h3 class="card-subtitle">sub-title</h3>
+                    <h3 class="card-title">${data[i].title["rendered"]}</h3>
+                    <h4 class="card-subtitle">sub-title</h4>
                     <p class="card-description">${text}</p>
                     <div class="card-action">
                     <a href="../blog-detail.html?id=${data[i].link}">Read more &rarr;</a>

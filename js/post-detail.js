@@ -25,6 +25,7 @@ async function getPostId() {
                         <img id="openModal"src="${
                           postData.featured_media_src_url
                         }" alt="${postData.slug}"/>
+                        <button class="back" onclick="backButton()">&larr; Back</button>
                         <div class="text-content">
                         <h1 class="post-title">${
                           postData.title["rendered"]
@@ -41,7 +42,7 @@ async function getPostId() {
                           ", #"
                         )}</code>
                         </div>
-                        <button class="back" onclick="backButton()">&larr; Back</button
+                       
                         `;
     imgModal.innerHTML = `<img id="openModal"src="${postData.featured_media_src_url}" alt="${postData.slug}"></img>`;
     document.getElementById("openModal").addEventListener("click", function () {
