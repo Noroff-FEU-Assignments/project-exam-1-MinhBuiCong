@@ -8,6 +8,8 @@ let posts;
 
 document.getElementById("carousel-button-prev").style.opacity = 0.2;
 
+//Get data
+
 async function getUrl() {
   try {
     const responsePosts = await fetch(url, {
@@ -32,6 +34,8 @@ async function getUrl() {
 }
 
 getUrl();
+
+//create carousel
 
 function createCarousel(posts) {
   const slides = document.querySelector(".carousel-slide");
@@ -67,6 +71,8 @@ function createCarousel(posts) {
     });
 }
 
+//next button
+
 function moveToNextSlide(totalItem, slideItems) {
   slidePosition += pageItem;
   if (slidePosition + pageItem >= totalItem - 1) {
@@ -76,6 +82,8 @@ function moveToNextSlide(totalItem, slideItems) {
   prevButton.style.opacity = 1;
   updateSlidePosition(slideItems, totalItem);
 }
+
+//previous button
 
 function moveToPrevSlide(totalItem, slideItems) {
   if (slidePosition === 0) {
@@ -90,11 +98,15 @@ function moveToPrevSlide(totalItem, slideItems) {
   updateSlidePosition(slideItems, totalItem);
 }
 
+//change opacity on previous button when in slideposition 0
+
 function updateButton() {
   if (slidePosition === 0) {
     prevButton.style.opacity = 0.1;
   }
 }
+
+//add hidden class on displayed item, add visible class on 4 hidden items.
 
 function updateSlidePosition(slideItems, totalItem) {
   for (let slideItem of slideItems) {

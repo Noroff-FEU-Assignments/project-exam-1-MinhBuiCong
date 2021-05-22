@@ -11,6 +11,8 @@ const titleWeb = document.querySelector("title");
 var modal = document.getElementById("modal");
 var span = document.getElementsByClassName("close")[0];
 
+//get ID on posts, get all categories
+
 async function getPostId() {
   try {
     const responsePost = await fetch(urlDetail);
@@ -58,11 +60,13 @@ async function getPostId() {
       }
     };
   } catch (error) {
-    console.log("error :>> ", error);
+    postContainer.innerHTML = `<h1>something is wrong</h1>`;
   }
 }
 
 getPostId();
+
+//compare categories id with postData.cateogries id, then push out name
 
 function getCategoryNames(mappedCategories, categoryIds) {
   var names = [];
@@ -71,6 +75,8 @@ function getCategoryNames(mappedCategories, categoryIds) {
   }
   return names;
 }
+
+//get all categories id, and put in list
 
 function createCategoryMap(postCategories) {
   var categoriesMap = {};

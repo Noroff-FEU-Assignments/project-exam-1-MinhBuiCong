@@ -16,7 +16,6 @@ async function getUrl() {
       },
     });
     const postData = await responsePosts.json();
-    console.log("postData :>> ", postData);
     data = postData.map(function (data, index) {
       return {
         id: index,
